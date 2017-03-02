@@ -1,11 +1,12 @@
+
 package Dao;
 
-import Model.Menu;
+import Model.Ingredient;
 
-public class MenuDAOImpl implements MenuDAO {
+public class IngredientDAOimpl implements IngredientDAO{
 
     @Override
-    public void addmenu(Menu menu) {
+    public void addIngredient(Ingredient ingredient) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
