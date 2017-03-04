@@ -5,4 +5,3 @@ CREATE TABLE food_user (
     password VARCHAR(30),
     gender VARCHAR(30)
     );
-	
