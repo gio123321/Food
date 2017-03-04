@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 public class Food {
 
+    private int id;
+
     private ArrayList<Ingredient> ingredients;
 
     private String name;
@@ -14,6 +16,14 @@ public class Food {
     private String cooking_way;
 
     public Food() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Food(ArrayList<Ingredient> ingredients, String name, FoodType foodtype, String cooking_way) {
