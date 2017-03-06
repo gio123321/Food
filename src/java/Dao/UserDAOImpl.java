@@ -16,12 +16,12 @@ public class UserDAOImpl implements UserDAO{
     @Override
     public void addUser(User user) {
        try {
-            String sql = "INSERT INTO food_user (name,lastname,password) VALUES (?,?,?)";
+            String sql = "INSERT INTO food_user (name,name,password,gender) VALUES (?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, user.getName());
             pstmt.setString(2, user.getSurName());
             pstmt.setString(3, user.getPassword());
-            pstmt.setGender(4, user.getGender());
+            pstmt.setString(4, user.getGender().name());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -37,9 +37,9 @@ public class UserDAOImpl implements UserDAO{
             pstmt.setString(2, password);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                String name = rs.getString("firstname");
-                String surname = rs.getString("lastname");
-                Gender gender = rs.getString("gender");
+                String name = rs.getString("name");
+                String surname = rs.getString("surname");
+                Gender gender = Gender.valueOf(rs.getString("gender"));
                 User user = new User(name, password, surname, gender);
                 return user;
             } else {
