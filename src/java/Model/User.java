@@ -13,6 +13,10 @@ public class User {
     
     private Gender gender;
 
+    public User(String name, String password, String surname, Gender gender) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getId() {
         return id;
     }
