@@ -34,7 +34,6 @@ public class Food {
         this.cooking_way = cooking_way;
     }
 
-    
     public Food(ArrayList<Ingredient> ingredients, String name, FoodType foodtype, String cooking_way) {
         this.ingredients = ingredients;
         this.name = name;
@@ -76,9 +75,7 @@ public class Food {
 
     @Override
     public String toString() {
-        return  id + " " + ingredients + " " + name + " " + foodtype + " " + cooking_way ;
+        return id + " " + ingredients + " " + name + " " + foodtype + " " + cooking_way;
     }
-    
-    
 
 }

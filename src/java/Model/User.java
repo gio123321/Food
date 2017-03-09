@@ -3,19 +3,16 @@ package Model;
 import Enum.Gender;
 
 public class User {
-    private int id;
-    
-    private String name;
-    
-    private String surName;
-    
-    private String password;
-    
-    private Gender gender;
 
-    public User(String name, String password, String surname, Gender gender) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private int id;
+
+    private String name;
+
+    private String surName;
+
+    private String password;
+
+    private Gender gender;
 
     public int getId() {
         return id;
@@ -67,6 +64,12 @@ public class User {
         this.password = password;
         this.gender = gender;
     }
-    
-    
+
+    public User(String name, String surName, String password, Gender gender) {
+        this.name = name;
+        this.surName = surName;
+        this.password = password;
+        this.gender = gender;
+    }
+
 }
