@@ -1,6 +1,7 @@
 package Model;
 
 import Enum.Gender;
+import java.util.Objects;
 
 public class User {
 
@@ -10,9 +11,36 @@ public class User {
 
     private String surName;
 
+    private String username;
+
     private String password;
 
     private Gender gender;
+
+    public User() {
+    }
+
+    public User(String username) {
+        this.username = username;
+    }
+    
+
+    public User(int id, String name, String surName, String username, String password, Gender gender) {
+        this.id = id;
+        this.name = name;
+        this.surName = surName;
+        this.username = username;
+        this.password = password;
+        this.gender = gender;
+    }
+
+    public User(String name, String surName, String username, String password, Gender gender) {
+        this.name = name;
+        this.surName = surName;
+        this.username = username;
+        this.password = password;
+        this.gender = gender;
+    }
 
     public int getId() {
         return id;
@@ -54,22 +82,27 @@ public class User {
         this.gender = gender;
     }
 
-    public User() {
+    public String getUsername() {
+        return username;
     }
 
-    public User(int id, String name, String surName, String password, Gender gender) {
-        this.id = id;
-        this.name = name;
-        this.surName = surName;
-        this.password = password;
-        this.gender = gender;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public User(String name, String surName, String password, Gender gender) {
-        this.name = name;
-        this.surName = surName;
-        this.password = password;
-        this.gender = gender;
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 13 * hash + Objects.hashCode(this.password);
+        return hash;
     }
+
+    @Override
+    public String toString() {
+        return name + " " + surName + " " + username + " " + gender;
+    }
+
+
+    
 
 }
