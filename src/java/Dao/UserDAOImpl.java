@@ -57,14 +57,12 @@ public class UserDAOImpl implements UserDAO {
         try {
 
             String sql = "SELECT * FROM food_user WHERE username = ? AND password = ?";
-
             pstmt = conn.prepareStatement(sql);
             String s = Integer.toString(password.hashCode());
             pstmt.setString(1, username);
             pstmt.setString(2, s);
-
             ResultSet rs = pstmt.executeQuery();
-
+            
             if (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
@@ -72,11 +70,10 @@ public class UserDAOImpl implements UserDAO {
                 Gender gender = Gender.valueOf(rs.getString("gender"));
                 
                 User user = new User(id, name, surname, username, password, gender);
-
                 return user;
-
+                
             } else {
-
+                
                 return null;
 
             }

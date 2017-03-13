@@ -2,11 +2,23 @@
 
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>შესვლა</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="\Food/res/Fotos/Logo/icon.png" />
+        <style>
+        body {
+        background-image: url("background.jpg");
+        }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="loginForm">
+            <form action="LoginServlet" method="post">
+                <input type="text" name="username" /> <br>
+                <input type="password" name="password" /> <br>
+                <input type="submit" value="შესვლა" />
+                <a href="register.html">რეგისტრაცია</a> <br>
+            </form>
+        </div>
     </body>
 </html>
