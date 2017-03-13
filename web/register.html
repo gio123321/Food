@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>რეგისტრაცია</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="Public/css/style.css" type="text/css"/>
+        <link rel="icon" type="image/png" href="Public/foto/icon.png" />
+    </head>
+    <body>
+        <div class="registerForm">
+            <form action="RegisterServlet" name="registerForm" method="post">
+                სახელი:
+                <input type="text" name="firstname" /> <br>
+                გვარი:
+                <input type="text" name="surname" /> <br>
+                მომ. სახ. :
+                <input type="text" name="username" /> <br>
+                პაროლი:
+                <input type="password" name="password" /> <br>
+                სქესი:
+                <select>
+                    <option value="მამრობითი">მამრობითი</option>
+                    <option value="მდედრობითი">მდედრობითი</option>
+                </select>
+                <br>
+                    <button>რეგისტრაცია</button>
+            </form>
+        </div>
+    </body>
+</html>
