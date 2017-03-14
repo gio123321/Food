@@ -1,24 +1,39 @@
 <!DOCTYPE html>
-
 <html>
+    
     <head>
         <title>შესვლა</title>
         <meta charset="UTF-8">
-        <link rel="icon" type="image/png" href="\Food/res/Fotos/Logo/icon.png" />
+        <link rel="stylesheet" href="Public/css/style.css" type="text/css"/>
+        <link rel="icon" type="image/png" href="Public/foto/icon.png" />
         <style>
-        body {
-        background-image: url("background.jpg");
-        }
+            body{
+                background-image: url("Public/foto/bground.png");
+            }
         </style>
+
     </head>
+    
     <body>
         <div class="loginForm">
+            <div class="rectangle">
+                <img/>
+            </div>
+            <h2>შესვლა</h2>
             <form action="LoginServlet" method="post">
-                <input type="text" name="username" /> <br>
-                <input type="password" name="password" /> <br>
-                <input type="submit" value="შესვლა" />
-                <a href="register.html">რეგისტრაცია</a> <br>
+                
+                <label for="fname">მომ .სახ.</label>
+                <input type="text" name="username" placeholder="შეიყვანეთ მომ .სახ."><br>
+                
+                <label for="lname">პაროლი</label>
+                <input type="password" name="password" placeholder="შეიყვანეთ პაროლი"><br>
+                
+                <button class="button">შესვლა</button>
+                
+                <a href="register.html"> რეგისტრაცია </a>
+                
             </form>
         </div>
     </body>
+            
 </html>
