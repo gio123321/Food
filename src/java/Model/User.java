@@ -19,11 +19,7 @@ public class User {
 
     public User() {
     }
-
-    public User(String username) {
-        this.username = username;
-    }
-    
+  
 
     public User(int id, String name, String surName, String username, String password, Gender gender) {
         this.id = id;
@@ -41,6 +37,7 @@ public class User {
         this.password = password;
         this.gender = gender;
     }
+
 
     public int getId() {
         return id;

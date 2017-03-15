@@ -11,7 +11,7 @@
         <div class="registerForm">
             <form action="RegisterServlet" name="registerForm" method="post">
                 სახელი:
-                <input type="text" name="firstname" /> <br>
+                <input type="text" name="name" /> <br>
                 გვარი:
                 <input type="text" name="surname" /> <br>
                 მომ. სახ. :
@@ -19,9 +19,9 @@
                 პაროლი:
                 <input type="password" name="password" /> <br>
                 სქესი:
-                <select>
-                    <option value="მამრობითი">მამრობითი</option>
-                    <option value="მდედრობითი">მდედრობითი</option>
+                <select name="gender">
+                    <option value="male">მამრობითი</option>
+                    <option value="female">მდედრობითი</option>
                 </select>
                 <br>
                     <button>რეგისტრაცია</button>
