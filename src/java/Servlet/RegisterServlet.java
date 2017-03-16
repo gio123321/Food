@@ -23,15 +23,14 @@ public class RegisterServlet extends HttpServlet {
         String gen = request.getParameter("gender");
         Gender gender = Gender.valueOf(gen);;
         if (name.isEmpty() || surname.isEmpty() || username.isEmpty() || password.isEmpty()) {
-            response.setContentType("text/html");
-            response.setCharacterEncoding("UTF-8");
-            PrintWriter pw = response.getWriter();
-            pw.append("შეავსეთ ყველა ველი!");
+            request.setAttribute("registrationFailed", true);
+            RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+            rd.forward(request, response);
         } else if (!name.isEmpty() || !surname.isEmpty() || !username.isEmpty() || !password.isEmpty()) {
             User user = new User(name, surname, username, password, gender);
             UserDAO userDao = new UserDAOImpl();
             userDao.addUser(user);
-            RequestDispatcher rd = request.getRequestDispatcher("index.html");
+            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
             rd.forward(request, response);
         }
     }

@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <html>
@@ -32,7 +33,12 @@
                     <option value="female">მდედრობითი</option>
                 </select>
                 <br><br><br>
-                    <button class="reg_button">რეგისტრაცია</button>
+                <button class="reg_button">რეგისტრაცია</button>
+                <%
+                    if (request.getAttribute("registrationFailed") != null && request.getAttribute("registrationFailed") == Boolean.TRUE) {
+                        out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
+                    }
+                    %>
             </form>
         </div>
         </div>

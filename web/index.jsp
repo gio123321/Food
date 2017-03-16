@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     
@@ -20,19 +21,19 @@
     
     <body>
         <div class="loginForm">
-            <div class="rectangle">
-                <img/>
-            </div>
             <h2>შესვლა</h2>
             <form action="LoginServlet" method="post">
                 <input type="text" name="username" placeholder="შეიყვანეთ მომ .სახ."><br><br>
-                
                 <input type="password" name="password" placeholder="შეიყვანეთ პაროლი"><br><br>
-                
                 <button class="button">შესვლა</button>
-                
-                <a href="register.html"> რეგისტრაცია </a>
-                
+                <a href="register.jsp"> რეგისტრაცია </a>
+                <%
+                    if(request.getAttribute("isLoginFieldEmpty") != null && request.getAttribute("isLoginFieldEmpty") == Boolean.TRUE) {
+                        out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
+                    } else if(request.getAttribute("loginFailed") != null && request.getAttribute("loginFailed") == Boolean.TRUE) {
+                        out.write("<p style=\"color:red;\">სახელი ან პაროლი არასწორია!</p>");
+                    } 
+                    %>
             </form>
         </div>
     </body>
