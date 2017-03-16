@@ -15,6 +15,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         UserDAO userDAO = new UserDAOImpl();
         User user = userDAO.getUser(username, password);
 
@@ -22,9 +23,12 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
 
-        if (user == null) {
+        if (username.equals("") || password.equals("")) {
+            pw.append("შეავსეთ ყველა ველი");
+
+        } else if (user == null) {
             pw.append("სახელი ან პაროლი არასწორია!");
-        } else {
+        } else if (!username.isEmpty() && !password.isEmpty()) {
 
             pw.append("გამარჯობა " + user.getName());
 
