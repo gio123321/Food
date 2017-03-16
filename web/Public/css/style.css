@@ -1,0 +1,72 @@
+.loginForm {
+    text-align: center;
+    width: 450px;
+    height: 235px;
+    background: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 20%;
+}
+.button {
+    background-color: #4CAF50; /* მწვანე */
+    border: none;
+    color: white;
+    padding: 10px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+input[type=text]
+{
+    background-color: white;
+    border:solid 1px black;
+    color: black;
+    height: 37px;
+    padding-left:10px;
+    width: 400px;
+    box-shadow: 2px 2px 0 gray inset;
+}
+
+input[type=password]
+{
+    background-color: white;
+    border:solid 1px black;
+    color: black;
+    height: 37px;
+    padding-left:10px;
+    width: 400px;
+    box-shadow: 2px 2px 0 gray inset;
+}
+
+.register {
+    width: 450px;
+    height: 750px;
+    background:  #d5d8dc;
+    border-radius: 15px;
+}
+.registerform
+{
+    left: 20px;
+}
+
+.styled-select {
+   height: 33px;
+   overflow: hidden;
+   width: 414px;
+   font-size: 18px;
+}
+
+.reg_button {;
+    border: none;
+    color: black;
+    padding: 10px 21px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+}
+
+ h2 {
+    display: inline-block;
+}
