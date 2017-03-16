@@ -19,7 +19,7 @@
             <h1>რეგისტრაცია</h1> <br>
             <form action="RegisterServlet" name="registerForm" method="post">
                 <h3>სახელი:</h3>
-                <input type="text" name="firstname" /> <br>
+                <input type="text" name="name" /> <br>
                 <h3>გვარი:</h3>
                 <input type="text" name="surname" /> <br>
                 <h3>მომ. სახ. :</h3>
@@ -27,9 +27,9 @@
                 <h3>პაროლი:</h3>
                 <input type="password" name="password" /> <br>
                 <h3>სქესი:</h3>
-                <select class="styled-select">
-                    <option value="მამრობითი">მამრობითი</option>
-                    <option value="მდედრობითი">მდედრობითი</option>
+                <select name="gender" class="styled-select">
+                    <option value="male">მამრობითი</option>
+                    <option value="female">მდედრობითი</option>
                 </select>
                 <br><br><br>
                     <button class="reg_button">რეგისტრაცია</button>
