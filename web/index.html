@@ -8,7 +8,11 @@
         <link rel="icon" type="image/png" href="Public/foto/icon.png" />
         <style>
             body{
-                background-image: url("Public/foto/bground.png");
+                background: url("Public/foto/bground.png")  no-repeat;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
             }
         </style>
 
@@ -21,12 +25,9 @@
             </div>
             <h2>შესვლა</h2>
             <form action="LoginServlet" method="post">
+                <input type="text" name="username" placeholder="შეიყვანეთ მომ .სახ."><br><br>
                 
-                <label for="fname">მომ .სახ.</label>
-                <input type="text" name="username" placeholder="შეიყვანეთ მომ .სახ."><br>
-                
-                <label for="lname">პაროლი</label>
-                <input type="password" name="password" placeholder="შეიყვანეთ პაროლი"><br>
+                <input type="password" name="password" placeholder="შეიყვანეთ პაროლი"><br><br>
                 
                 <button class="button">შესვლა</button>
                 
