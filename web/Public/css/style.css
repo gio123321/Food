@@ -40,24 +40,24 @@ input[type=password]
 }
 
 .register {
+    text-align: center;
     width: 450px;
     height: 750px;
     background:  #d5d8dc;
     border-radius: 15px;
+    margin-left: auto ;
+    margin-right: auto ;
 }
-.registerform
-{
-    left: 20px;
-}
+
 
 .styled-select {
-   height: 33px;
-   overflow: hidden;
-   width: 414px;
-   font-size: 18px;
+    height: 33px;
+    overflow: hidden;
+    width: 414px;
+    font-size: 18px;
 }
 
-.reg_button {;
+.reg_button {
     border: none;
     color: black;
     padding: 10px 21px;
@@ -65,8 +65,11 @@ input[type=password]
     text-decoration: none;
     display: inline-block;
     font-size: 17px;
+
 }
 
- h2 {
-    display: inline-block;
-}
+
+
+
+
+
