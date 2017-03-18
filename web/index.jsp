@@ -26,7 +26,7 @@
                 <input type="text" name="username" placeholder="შეიყვანეთ მომ .სახ."><br><br>
                 <input type="password" name="password" placeholder="შეიყვანეთ პაროლი"><br><br>
                 <button class="button">შესვლა</button>
-                S
+                
                 <a href="register.jsp"> რეგისტრაცია </a>
                 <%
                     if(request.getAttribute("isLoginFieldEmpty") != null && request.getAttribute("isLoginFieldEmpty") == Boolean.TRUE) {
