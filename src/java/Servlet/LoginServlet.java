@@ -30,7 +30,8 @@ public class LoginServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
             rd.forward(request, response);
         } else if (!username.isEmpty() && !password.isEmpty()) {
-            
+            RequestDispatcher rd = request.getRequestDispatcher("Interface.html");
+            rd.forward(request, response);
         }
     }
 }
