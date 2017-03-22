@@ -68,8 +68,18 @@ input[type=password]
 
 }
 
+.interface_1
+{
+    width: 100%;
+    height: 70px;
+    background: gray;
+}
 
-
-
-
-
+.interface_2
+{
+    width: 80%;
+    height: 1000px;
+    background: white;
+    margin-left: auto ;
+    margin-right: auto ;
+}
