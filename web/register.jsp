@@ -6,7 +6,7 @@
         <title>რეგისტრაცია</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="Public/css/style.css" type="text/css"/>
-        <link rel="icon" type="image/png" href="Public/foto/icon.png" />
+        <link rel="icon" type="image/png" href="Public/foto/icon2.png" />
         <style>
             body{
                 background: url("Public/foto/reg_bground.jpg");
