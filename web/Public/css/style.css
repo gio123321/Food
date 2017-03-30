@@ -28,6 +28,7 @@ input[type=text]
     box-shadow: 2px 2px 0 gray inset;
 }
 
+
 input[type=password]
 {
     background-color: white;
@@ -68,8 +69,53 @@ input[type=password]
 
 }
 
+.interface_1
+{
+    width: 100%;
+    height: 70px;
+    background: gray;
+}
 
+.interface_2
+{
+    width: 80%;
+    height: 1000px;
+    background: white;
+    margin-left: auto ;
+    margin-right: auto ;
+}
 
+.add
+{
+    text-align: center;
+    width: 500px;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 5%;   
+}
 
+#text{
+    resize:none;
+}
+#div{
+    align-content: center;
+    margin-right: 5px;
+    resize: none ;
 
+}
 
+.insText{
+    resize: none ;
+}
+.center{
+    resize: none ;
+}
+#txtarea{
+    resize: none;
+}
+#btn{
+    text-align: center;
+    
+}
