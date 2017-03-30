@@ -37,4 +37,14 @@
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping> 
     
+      <servlet>
+        <servlet-name>addFoodServlet</servlet-name>
+        <servlet-class>Servlet.addFoodServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>addFoodServlet</servlet-name>
+        <url-pattern>/addFoodServlet</url-pattern>
+    </servlet-mapping> 
+    
 </web-app>

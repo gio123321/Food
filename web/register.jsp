@@ -19,7 +19,7 @@
         <div class="register">
 
             <h1 id=registrationlabel >რეგისტრაცია</h1> <br>
-            <form align="center" class="center" action="RegisterServlet" name="registerForm" method="post">
+            
                 <h3>სახელი:</h3>
                 <input id="1" type="text" name="name" /> <br>
                 <h3>გვარი:</h3>
