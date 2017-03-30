@@ -6,7 +6,7 @@
         <title>რეგისტრაცია</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="Public/css/style.css" type="text/css"/>
-        <link rel="icon" type="image/png" href="Public/foto/icon2.png" />
+        <link rel="icon" type="image/png" href="Public/foto/icon.png" />
         <style>
             body{
                 background: url("Public/foto/reg_bground.jpg");
@@ -19,7 +19,7 @@
         <div class="register">
 
             <h1 id=registrationlabel >რეგისტრაცია</h1> <br>
-            
+            <form align="center" class="center" action="RegisterServlet" name="registerForm" method="post">
                 <h3>სახელი:</h3>
                 <input id="1" type="text" name="name" /> <br>
                 <h3>გვარი:</h3>

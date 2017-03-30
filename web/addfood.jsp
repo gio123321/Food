@@ -11,7 +11,6 @@
             body{
                 background: url("Public/foto/bg1.jpg");
             }
-
         </style>
     </head>
     <body>
@@ -31,14 +30,13 @@
                     <h2>ინგრედიენტები</h2>
                     <button onclick="addBoxes()" id="btn">ახალი ინგრედიენტი</button>
                     რაოდენობა
-                    <select id="inQuantity"> 
+                    <select id="inQuantity" name="quantity"> 
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <input type="hidden" name="quantity" />  <!--რაოდენობის გასაგებად -->
 
                     <br>
                     <br>
@@ -66,10 +64,10 @@
                                 var opt2 = document.createElement("option");
                                 var br = document.createElement("br");
 
-                                name.name = "name" + counter;
-                                quantity.name = "quantity" + counter;
-                                type.name = "type" + counter;
-                                comment.name = "comment" + counter;
+                                name.name = "name_" + counter;
+                                quantity.name = "quantity_" + counter;
+                                type.name = "type_" + counter;
+                                comment.name = "comment_" + counter;
 
                                 name.placeholder = document.getElementsByName("quantity").value;
                                 quantity.placeholder = "რაოდენობა";
@@ -101,13 +99,12 @@
                                 comment.cols = "60";
 
                                 counter++;
-                                document.getElementsByName("quantity").value = counter;
                             }
 
 
                             return counter;
                         }
-
+                        
                     </script>
 
                 </div>

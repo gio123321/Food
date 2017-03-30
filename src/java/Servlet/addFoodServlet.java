@@ -21,7 +21,7 @@ public class addFoodServlet extends HttpServlet {
 //        FoodType type = FoodType.valueOf(ftype);
 //        String cookingWay = request.getParameter("cookingway");
 
-        String quantity = request.getParameter("v");
+        String quantity = request.getParameter("quantity");
 
 //        if (quantity == 1) {
 //            String Inname = request.getParameter("name1");
