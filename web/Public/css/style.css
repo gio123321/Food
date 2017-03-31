@@ -119,3 +119,7 @@ input[type=password]
     text-align: center;
     
 }
+
+#commentBox{
+    resize : none;
+}

@@ -48,7 +48,7 @@
                             return value;
                         }
                         var counter = 1;
-                        document.getElementsByName("quantity").value = counter;
+                       
                         addBoxes = function () {
 
                             document.getElementById("btn").disabled = true;
@@ -56,9 +56,11 @@
 
                                 var name = document.createElement("input");
                                 var quantity = document.createElement("input");
+                                quantity.type = "number";
+                                
                                 var type = document.createElement("select");
                                 var comment = document.createElement("textarea");
-
+                                comment.id = "commentBox";
 
                                 var opt1 = document.createElement("option");
                                 var opt2 = document.createElement("option");
@@ -69,7 +71,7 @@
                                 type.name = "type_" + counter;
                                 comment.name = "comment_" + counter;
 
-                                name.placeholder = document.getElementsByName("quantity").value;
+                                name.placeholder = "სახელი";
                                 quantity.placeholder = "რაოდენობა";
                                 comment.placeholder = "კომენტარი";
 
@@ -101,8 +103,6 @@
                                 counter++;
                             }
 
-
-                            return counter;
                         }
                         
                     </script>
