@@ -112,6 +112,11 @@
 
                 <textarea name="cookingway" rows="6" cols="60" id="text" placeholder="მომზადების წესი"></textarea>
                 <button>დამატება</button>
+                <%
+                    if(request.getAttribute("addFoodFailed") != null && request.getAttribute("addFoodFailed") == Boolean.TRUE){
+                        out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
+                    }
+                    %>
             </div>
         </form>
     </body>
