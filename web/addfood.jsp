@@ -14,13 +14,13 @@
         </style>
     </head>
     <body>
-        <form align="center"  action="addFoodServlet" name="addFoodForm" method="post"><
+        <form align="center"  action="addFoodServlet" name="addFoodForm" method="post" enctype="multipart/form-data"><
             <div class="add">
                 <h1>კერძის დამატება</h1>
                 <h2>სახელი</h2>
                 <input type="text" name="name"/> <br>
                 <h2>სურათი</h2> 
-                <input type='file' id="imgInp" />
+                  <input type="file" name="file" size="50" />
                 <h2>სახეობა</h2>
                 <select name="type" class="styled-select">
                     <option value="Food">საჭმელი</option>

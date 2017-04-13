@@ -9,7 +9,7 @@
         <description>Location to store uploaded file</description> 
         <param-name>file-upload</param-name> 
         <param-value>
-            C:\Users\user\Desktop\
+            C:\Users\TechnoLine\Desktop\s\
         </param-value> 
     </context-param>
     
