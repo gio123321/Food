@@ -14,8 +14,27 @@ public class Food {
     private FoodType foodtype;
 
     private String cooking_way;
+    
+    private String imagePath;
 
     public Food() {
+    }
+
+    public Food(int id, ArrayList<Ingredient> ingredients, String name, FoodType foodtype, String cooking_way, String imagePath) {
+        this.id = id;
+        this.ingredients = ingredients;
+        this.name = name;
+        this.foodtype = foodtype;
+        this.cooking_way = cooking_way;
+        this.imagePath = imagePath;
+    }
+
+    public Food(ArrayList<Ingredient> ingredients, String name, FoodType foodtype, String cooking_way, String imagePath) {
+        this.ingredients = ingredients;
+        this.name = name;
+        this.foodtype = foodtype;
+        this.cooking_way = cooking_way;
+        this.imagePath = imagePath;
     }
 
     public int getId() {
@@ -25,22 +44,7 @@ public class Food {
     public void setId(int id) {
         this.id = id;
     }
-
-    public Food(int id, ArrayList<Ingredient> ingredients, String name, FoodType foodtype, String cooking_way) {
-        this.id = id;
-        this.ingredients = ingredients;
-        this.name = name;
-        this.foodtype = foodtype;
-        this.cooking_way = cooking_way;
-    }
-
-    public Food(ArrayList<Ingredient> ingredients, String name, FoodType foodtype, String cooking_way) {
-        this.ingredients = ingredients;
-        this.name = name;
-        this.foodtype = foodtype;
-        this.cooking_way = cooking_way;
-    }
-
+    
     public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -72,6 +76,15 @@ public class Food {
     public void setCooking_way(String cooking_way) {
         this.cooking_way = cooking_way;
     }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+    
 
     @Override
     public String toString() {

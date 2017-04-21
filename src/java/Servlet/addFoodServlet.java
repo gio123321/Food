@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -28,6 +29,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 
 @WebServlet("/Relay")
 @MultipartConfig
@@ -39,6 +41,8 @@ public class addFoodServlet extends HttpServlet {
     private int maxMemSize = 5000 * 1024;
     private File file;
 
+    private String imagePath;
+
 //    private String name;
 //    private String cookingway;
     public void init() {
@@ -46,6 +50,7 @@ public class addFoodServlet extends HttpServlet {
         filePath
                 = getServletContext().getInitParameter("file-upload");
     }
+    
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -71,6 +76,7 @@ public class addFoodServlet extends HttpServlet {
 
             // Process the uploaded file items
             Iterator i = fileItems.iterator();
+            Random random = new Random();
 
             while (i.hasNext()) {
                 FileItem fi = (FileItem) i.next();
@@ -82,12 +88,24 @@ public class addFoodServlet extends HttpServlet {
                     boolean isInMemory = fi.isInMemory();
                     long sizeInBytes = fi.getSize();
 
+                    String extention = FilenameUtils.getExtension(fileName);
+                    String imageName = FilenameUtils.removeExtension(fileName);
+
                     if (fileName.lastIndexOf("\\") >= 0) {
+                        fileName = imageName + random.nextInt() + "." + extention;
+                        imagePath = fileName;
+
                         file = new File(filePath
                                 + fileName.substring(fileName.lastIndexOf("\\")));
+
                     } else {
+
+                        fileName = imageName + random.nextInt() + "." + extention;
+                        imagePath = fileName;
+
                         file = new File(filePath
                                 + fileName.substring(fileName.lastIndexOf("\\") + 1));
+
                     }
                     try {
                         fi.write(file);
@@ -140,7 +158,7 @@ public class addFoodServlet extends HttpServlet {
 
             } else {
 
-                Food food = new Food(ins, name, type, cookingway);
+                Food food = new Food(ins, name, type, cookingway, imagePath);
                 FoodDAO dao = new FoodDAOImpl();
                 dao.addFood(food);
             }

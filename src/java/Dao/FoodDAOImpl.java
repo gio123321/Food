@@ -33,11 +33,12 @@ public class FoodDAOImpl implements FoodDAO {
 
             ArrayList<Ingredient> inArray = food.getIngredients();
             String ingredients = Ingredient.objectsToString(inArray);
-            pstmt = con.prepareStatement("INSERT INTO FOOD (name,foodtype,cooking_way,ingredients) VALUES (?,?,?,?);");
+            pstmt = con.prepareStatement("INSERT INTO FOOD (name,foodtype,cooking_way,ingredients,imagePath) VALUES (?,?,?,?,?);");
             pstmt.setString(1, food.getName());
             pstmt.setString(2, food.getFoodtype().name());
             pstmt.setString(3, food.getCooking_way());
             pstmt.setString(4, ingredients);
+            pstmt.setString(5,food.getImagePath());
             pstmt.executeUpdate();
 
         } catch (SQLException ex) {
@@ -60,10 +61,11 @@ public class FoodDAOImpl implements FoodDAO {
                 FoodType type = FoodType.valueOf(rs.getString("foodtype"));
                 String cooking_way = rs.getString("cooking_way");
                 String ingredients = rs.getString("ingredients");
+                String imagePath = rs.getString("imagePath");
                 ArrayList<Ingredient> ins = new ArrayList<>();
                 ins = Ingredient.stringToObject(ingredients);
 
-                Food food = new Food(id, ins, name, type, cooking_way);
+                Food food = new Food(id, ins, name, type, cooking_way,imagePath);
                 foods.add(food);
 
             }
