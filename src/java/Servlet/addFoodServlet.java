@@ -50,7 +50,6 @@ public class addFoodServlet extends HttpServlet {
         filePath
                 = getServletContext().getInitParameter("file-upload");
     }
-    
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -146,6 +145,12 @@ public class addFoodServlet extends HttpServlet {
                 String itypeStr = (String) table.get("type_" + n);
                 String icomment = (String) table.get("comment_" + n);
 
+                if (iname.isEmpty() || iquantitystr.isEmpty() || icomment.isEmpty()) {
+                    request.setAttribute("addFoodFailed", true);
+                    RequestDispatcher rd = request.getRequestDispatcher("addfood.jsp");
+                    rd.forward(request, response);
+                }
+
                 QuantityType itype = QuantityType.valueOf(itypeStr);
 
                 Ingredient in = new Ingredient(iname, iquantity, itype, icomment);
@@ -161,6 +166,8 @@ public class addFoodServlet extends HttpServlet {
                 Food food = new Food(ins, name, type, cookingway, imagePath);
                 FoodDAO dao = new FoodDAOImpl();
                 dao.addFood(food);
+                RequestDispatcher rd = request.getRequestDispatcher("addfood.jsp");
+                rd.forward(request, response);
             }
 
         } catch (NumberFormatException ex) {
