@@ -6,4 +6,5 @@ public interface MenuDAO {
 
     void addmenu(Menu menu);
     
+    void fillFoods(Menu menu);
 }
