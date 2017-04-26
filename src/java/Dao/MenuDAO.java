@@ -4,7 +4,7 @@ import Model.Menu;
 
 public interface MenuDAO {
 
-    void addmenu(Menu menu);
+    int addmenu(Menu menu);
     
     void fillFoods(Menu menu);
 }
