@@ -9,7 +9,7 @@
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-            C:\Users\TechnoLine\Desktop\s\
+            
         </param-value>
     </context-param>
     <welcome-file-list>
@@ -52,5 +52,14 @@
     <servlet-mapping>
         <servlet-name>addMenuServlet</servlet-name>
         <url-pattern>/addMenuServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>interfaceServlet</servlet-name>
+        <servlet-class>Servlet.interfaceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>interfaceServlet</servlet-name>
+        <url-pattern>/interfaceServlet</url-pattern>
     </servlet-mapping>
 </web-app>
