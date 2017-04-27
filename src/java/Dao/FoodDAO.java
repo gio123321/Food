@@ -8,5 +8,5 @@ public interface FoodDAO {
     void addFood(Food food);
 
     ArrayList<Food> getAllFoods();
-
+    
 }

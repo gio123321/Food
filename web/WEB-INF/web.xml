@@ -44,4 +44,13 @@
         <servlet-name>addFoodServlet</servlet-name>
         <url-pattern>/addFoodServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>addMenuServlet</servlet-name>
+        <servlet-class>Servlet.addMenuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addMenuServlet</servlet-name>
+        <url-pattern>/addMenuServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

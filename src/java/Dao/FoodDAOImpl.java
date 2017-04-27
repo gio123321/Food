@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FoodDAOImpl implements FoodDAO {
 
@@ -38,7 +40,7 @@ public class FoodDAOImpl implements FoodDAO {
             pstmt.setString(2, food.getFoodtype().name());
             pstmt.setString(3, food.getCooking_way());
             pstmt.setString(4, ingredients);
-            pstmt.setString(5,food.getImagePath());
+            pstmt.setString(5, food.getImagePath());
             pstmt.executeUpdate();
 
         } catch (SQLException ex) {
@@ -65,7 +67,7 @@ public class FoodDAOImpl implements FoodDAO {
                 ArrayList<Ingredient> ins = new ArrayList<>();
                 ins = Ingredient.stringToObject(ingredients);
 
-                Food food = new Food(id, ins, name, type, cooking_way,imagePath);
+                Food food = new Food(id, ins, name, type, cooking_way, imagePath);
                 foods.add(food);
 
             }
