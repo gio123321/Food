@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <html>
@@ -25,7 +26,14 @@
             </form>
         <div class="interface_2">
             <img src="Public/foto/interface.jpg" style="width:100%;">
-            <h1>123</h1>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
+            <div class="square_1" style="display: inline-block"></div>
         </div>
         </div>
     </body>
