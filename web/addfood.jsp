@@ -20,7 +20,7 @@
                 <h2>სახელი</h2>
                 <input type="text" name="name"/> <br>
                 <h2>სურათი</h2> 
-                  <input type="file" name="file" size="50" />
+                <input type="file" name="file" size="50" />
                 <h2>სახეობა</h2>
                 <select name="type" class="styled-select">
                     <option value="Food">საჭმელი</option>
@@ -48,7 +48,7 @@
                             return value;
                         }
                         var counter = 1;
-                       
+
                         addBoxes = function () {
 
                             document.getElementById("btn").disabled = true;
@@ -57,7 +57,7 @@
                                 var name = document.createElement("input");
                                 var quantity = document.createElement("input");
                                 quantity.type = "number";
-                                
+
                                 var type = document.createElement("select");
                                 var comment = document.createElement("textarea");
                                 comment.id = "commentBox";
@@ -66,6 +66,9 @@
                                 var opt2 = document.createElement("option");
                                 var br = document.createElement("br");
 
+                                name.setAttribute("maxlength", 15);
+                                comment.setAttribute("maxlength", 30);
+                                
                                 name.name = "name_" + counter;
                                 quantity.name = "quantity_" + counter;
                                 type.name = "type_" + counter;
@@ -104,7 +107,7 @@
                             }
 
                         }
-                        
+
                     </script>
 
                 </div>
@@ -113,10 +116,10 @@
                 <textarea name="cookingway" rows="6" cols="60" id="text" placeholder="მომზადების წესი"></textarea>
                 <button>დამატება</button>
                 <%
-                    if(request.getAttribute("addFoodFailed") != null && request.getAttribute("addFoodFailed") == Boolean.TRUE){
+                    if (request.getAttribute("addFoodFailed") != null && request.getAttribute("addFoodFailed") == Boolean.TRUE) {
                         out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
                     }
-                    %>
+                %>
             </div>
         </form>
     </body>
