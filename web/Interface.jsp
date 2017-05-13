@@ -1,3 +1,6 @@
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.Collection"%>
+<%@page import="org.apache.catalina.ha.backend.CollectedInfo"%>
 <%@page import="Model.Ingredient"%>
 <%@page import="org.apache.jasper.JasperException"%>
 <%@page import="java.io.IOException"%>
@@ -29,7 +32,6 @@
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">მენიუს შერჩევა</button>
                     <input class="search" style="float:right" type="submit" value="ძებნა">
                     <input class="search_1" style="float:right;font-size: 12px;" type="search" name="search">
-                    <p > </p>
                 </div>
 
             </form>
@@ -39,6 +41,7 @@
                     ArrayList<Food> foods = new ArrayList<Food>();
                     FoodDAO dao = new FoodDAOImpl();
                     foods = dao.getAllFoods();
+                    Collections.shuffle(foods);
 
                     for (int i = 0; i < 6; i++) {
                         int size = foods.size();
@@ -47,7 +50,7 @@
                         }
                         Food food = foods.get(i);
 
-                        out.write("<div class=\"square_1\">");
+                        out.write("<form class=\"square_1\" action=\"InterfaceServlet\" method=\"post\">");
                         out.write("<img src=  " + "Public/photos/" + food.getImagePath() + " class=\"photo\" >");
                         out.write("<p class=\"head\"> " +food.getName() + " </p>");
 
@@ -59,8 +62,9 @@
                         }
                         ingredient_names = ingredient_names.substring(0, ingredient_names.length() - 1);
                         out.write("<p class=\"text_div2\" display:inline>" + "ინგრედიენტები: " + ingredient_names + "</p>");
-                        out.write("<button class=\"div_button\" maxlength=\"10\" >ვრცლად</button>");
-                        out.write("</div>");
+                        out.write("<input name=\"foodId\" type=\"hidden\" value=\"" + food.getId() + "\"/>");
+                        out.write("<button class=\"div_button\" maxlength=\"10\"  >ვრცლად</button>");
+                        out.write("</form>");
                     }
                 %>
             </div>

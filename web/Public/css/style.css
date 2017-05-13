@@ -191,3 +191,11 @@ input[type=password]
     float: right;
     margin-right: 5px;
 }
+
+.food_photo{
+    display: inline-block;
+    margin-top: 27px;
+    margin-right: 61%;
+    width: 350px;
+    height: 250px;
+}

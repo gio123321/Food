@@ -9,7 +9,7 @@
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-            C:\Users\TechnoLine\Desktop\java\Food\web\Public\photos\
+          C:\Users\user\Desktop\Food\web\Public\photos\
         </param-value>
     </context-param>
     <welcome-file-list>
