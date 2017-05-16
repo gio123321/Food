@@ -75,7 +75,24 @@ input[type=password]
     height: 60px;
     background: gray;
     text-align: center;
+    float: left;
+}
 
+.interface_main
+{
+    width: 80%;
+    height: 60px;
+    background: gray;
+    text-align: center;
+    float: left;
+}
+
+.search_form{
+    width: 20%;
+    height: 60px;
+    text-align: center;
+    display: inline-table;
+    background: gray;
 }
 
 .interface_2
@@ -190,6 +207,10 @@ input[type=password]
 .div_button{
     float: right;
     margin-right: 5px;
+     background-color: #4CAF50;
+     border: none;
+    color: white;
+    font-size: 17px; 
 }
 
 .food_photo{

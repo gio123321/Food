@@ -14,13 +14,14 @@
         </style>
     </head>
     <body>
+        <form align="center"  action="addFoodServlet" name="addFoodForm" method="post" enctype="multipart/form-data">
+            
                 <div class="interface_1">
                     <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
-                    <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
-                    <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">მენიუს შერჩევა</button>
+                    <button type="submit" class="button_1" name="action" value="button1">მენიუს შერჩევა</button>
                 </div>
-        <form align="center"  action="addFoodServlet" name="addFoodForm" method="post" enctype="multipart/form-data">
+         
             <div class="add">
                 <h1>კერძის დამატება</h1>
                 <h2>სახელი</h2>

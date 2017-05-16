@@ -78,4 +78,55 @@ public class FoodDAOImpl implements FoodDAO {
         return foods;
     }
 
+    @Override
+    public Food getFoodById(int id) {
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM food WHERE id = ?");
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String name = rs.getString("name");
+                FoodType type = FoodType.valueOf(rs.getString("foodtype"));
+                String cooking_way = rs.getString("cooking_way");
+                String ingredients = rs.getString("ingredients");
+                String imagePath = rs.getString("imagePath");
+                ArrayList<Ingredient> ins = new ArrayList<>();
+                ins = Ingredient.stringToObject(ingredients);
+
+                Food food = new Food(ins, name, type, cooking_way, imagePath);
+                return food;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return null;
+    }
+
+    @Override
+    public ArrayList<Food> getFoodByName(String name) {
+        ArrayList<Food> foods = new ArrayList<>();
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM food WHERE name = ?");
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                
+                int id = Integer.parseInt(rs.getString("id"));
+                FoodType type = FoodType.valueOf(rs.getString("foodtype"));
+                String cooking_way = rs.getString("cooking_way");
+                String ingredients = rs.getString("ingredients");
+                String imagePath = rs.getString("imagePath");
+                ArrayList<Ingredient> ins = new ArrayList<>();
+                ins = Ingredient.stringToObject(ingredients);
+
+                Food food = new Food(id, ins, name, type, cooking_way, imagePath);
+                foods.add(food);
+
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return foods;
+    }
 }

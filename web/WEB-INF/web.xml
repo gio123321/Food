@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
-    
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <context-param>
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-          C:\Users\user\Desktop\Food\web\Public\photos\
+            C:\Users\TechnoLine\Desktop\java\Food\web\Public\photos\
         </param-value>
     </context-param>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>searchServlet</servlet-name>
+        <servlet-class>Servlet.searchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchServlet</servlet-name>
+        <url-pattern>/searchServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -44,7 +47,6 @@
         <servlet-name>addFoodServlet</servlet-name>
         <url-pattern>/addFoodServlet</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>addMenuServlet</servlet-name>
         <servlet-class>Servlet.addMenuServlet</servlet-class>
@@ -53,7 +55,6 @@
         <servlet-name>addMenuServlet</servlet-name>
         <url-pattern>/addMenuServlet</url-pattern>
     </servlet-mapping>
-    
     <servlet>
         <servlet-name>interfaceServlet</servlet-name>
         <servlet-class>Servlet.interfaceServlet</servlet-class>
@@ -61,5 +62,13 @@
     <servlet-mapping>
         <servlet-name>interfaceServlet</servlet-name>
         <url-pattern>/interfaceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>foodServlet</servlet-name>
+        <servlet-class>Servlet.foodServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>foodServlet</servlet-name>
+        <url-pattern>/foodServlet</url-pattern>
     </servlet-mapping>
 </web-app>

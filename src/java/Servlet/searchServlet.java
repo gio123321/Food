@@ -1,26 +1,33 @@
 package Servlet;
 
+import Dao.FoodDAO;
+import Dao.FoodDAOImpl;
+import Model.Food;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class interfaceServlet extends HttpServlet {
+public class searchServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String id = request.getParameter("foodId");
+
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        PrintWriter p = response.getWriter();
-        
-        
-        RequestDispatcher rd = request.getRequestDispatcher("food.jsp");
-        request.setAttribute("id",id);
-        
+        String search = request.getParameter("search");
+
+        FoodDAO dao = new FoodDAOImpl();
+        ArrayList<Food> foods = dao.getFoodByName(search);
+        request.setAttribute("searchList", foods);
+
+        RequestDispatcher rd = request.getRequestDispatcher("Interface.jsp");
         rd.forward(request, response);
+
     }
+
 }

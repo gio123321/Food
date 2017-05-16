@@ -9,4 +9,7 @@ public interface FoodDAO {
 
     ArrayList<Food> getAllFoods();
     
+    Food getFoodById(int id);
+    
+    ArrayList<Food> getFoodByName(String name);
 }
