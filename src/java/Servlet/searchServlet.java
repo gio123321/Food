@@ -29,5 +29,4 @@ public class searchServlet extends HttpServlet {
         rd.forward(request, response);
 
     }
-
 }

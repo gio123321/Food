@@ -16,7 +16,7 @@
     <body>
         <form align="center"  action="addFoodServlet" name="addFoodForm" method="post" enctype="multipart/form-data">
             
-                <div class="interface_1">
+                <div class="addfood2">
                     <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
                     <button type="submit" class="button_1" name="action" value="button1">მენიუს შერჩევა</button>
@@ -121,7 +121,7 @@
                 <h2>რეცეპტი</h2>
 
                 <textarea name="cookingway" rows="6" cols="60" id="text" placeholder="მომზადების წესი"></textarea>
-                <button>დამატება</button>
+                <button class="button_addfood" >დამატება</button>
                 <%
                     if (request.getAttribute("addFoodFailed") != null && request.getAttribute("addFoodFailed") == Boolean.TRUE) {
                         out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
