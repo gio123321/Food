@@ -6,10 +6,10 @@
 <html>
     <head>
         <%
-            int id = Integer.parseInt((String) request.getAttribute("id"));
-            FoodDAO dao = new FoodDAOImpl();
-            Food food = dao.getFoodById(id);
-            out.write("<title>" + food.getName() + "</title>");
+            //int id = Integer.parseInt((String) request.getAttribute("id"));
+            //FoodDAO dao = new FoodDAOImpl();
+            //Food food = dao.getFoodById(id);
+            //out.write("<title>" + food.getName() + "</title>");
         %>
         <title>rame</title>
         <meta charset="UTF-8">
@@ -36,9 +36,49 @@
         </form> 
         <div class="interface_2">
             <%
-                out.write("<img src=\"" + "Public/photos/" + food.getImagePath() + " \"class=\"food_photo\"");
-                out.write("<h1 style=\"display: inline-block\">" + food.getName() + "</h1");
+                //out.write("<img src=\"" + "Public/photos/" + food.getImagePath() + " \"class=\"food_photo\"");
+                //out.write("<h1 style=\"display: inline-block\">" + food.getName() + "</h1");
             %>
+            <img src="Public/foto/foodline.jpg" style="width :100%;">
+            <div style="display :inline-block;"><img src="Public/foto/bg1.jpg" class="food_photo"></div>
+            <div class="food_name"><h1>სახელი</h1>
+                <h3>სახეობა:</h3><br><br><br><br><br><br><br><br></div>
+            
+            <table>
+  <tr>
+    <th>სახელი</th>
+    <th>რაოდენობა</th>
+    <th>ტიპი</th>
+    <th>აღწერა</th>
+  </tr>
+  <tr>
+    <td>რამე1</td>
+    <td>რამე2</td>
+    <td>რამე3</td>
+    <td>რამე3</td>
+  </tr>
+  <tr>
+    <td>რამე1</td>
+    <td>რამე2</td>
+    <td>რამე3</td>
+    <td>რამე3</td>
+  </tr>
+  <tr>
+    <td>რამე1</td>
+    <td>რამე2</td>
+    <td>რამე3</td>
+    <td>რამე3</td>
+  </tr>
+  <tr>
+    <td>რამე1</td>
+    <td>რამე2</td>
+    <td>რამე3</td>
+    <td>მაქსიმუმ ხუთი სიტყვა</td>
+  </tr>
+</table>
+            <br>
+                <p class="cooking_way">dfiashdfoiasd[jfoioahsgoifujgposdjgpdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvvdfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdoasdgjsagfdgdf</p>
+           
         </div>
 
     </body>
