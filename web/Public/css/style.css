@@ -224,7 +224,9 @@ input[type=password]
 
 .food_photo{
     display: inline-block;
-    margin-top: 27px;
+    padding-left:  11px;
+    padding-top: 5px;
+    border-color: gray;
     width: 350px;
     height: 250px;
 }
@@ -243,7 +245,6 @@ input[type=password]
 }
 .food_name{
     display: inline-block;
-    margin-right: 45%;
 }
 
 table {
@@ -260,7 +261,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 .cooking_way{
     border-radius: 14px;
-    width: 95%;
+    width: 90%;
     text-align: left;
-    background-color: gainsboro
+    background-color: gainsboro;
+    word-wrap: break-word;
+    
+    padding-left:  5%;
+    padding-right:  5%;
+    padding-bottom:  5px;
+    padding-top: 5px;
 }

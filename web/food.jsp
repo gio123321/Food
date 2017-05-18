@@ -40,9 +40,9 @@
                 //out.write("<h1 style=\"display: inline-block\">" + food.getName() + "</h1");
             %>
             <img src="Public/foto/foodline.jpg" style="width :100%;">
-            <div style="display :inline-block;"><img src="Public/foto/bg1.jpg" class="food_photo"></div>
-            <div class="food_name"><h1>სახელი</h1>
-                <h3>სახეობა:</h3><br><br><br><br><br><br><br><br></div>
+            <div style="display :inline-block;float: left"><img src="Public/foto/bg1.jpg" class="food_photo"></div>
+            <div class="food_name" ><h1>სახელი</h1>
+                <h3 style="float: left;">სახეობა:</h3></div>
             
             <table>
   <tr>
@@ -77,7 +77,8 @@
   </tr>
 </table>
             <br>
-                <p class="cooking_way">dfiashdfoiasd[jfoioahsgoifujgposdjgpdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvvdfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdoasdgjsagfdgdf</p>
+            <h2>მომზადების წესი</h2>
+                <h3 class="cooking_way">სადასდასდასფსადფა[jfoioahsgoifujgposdjgpdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvvdfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdoasdgjsagfdgdf</h3>
            
         </div>
 

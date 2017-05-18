@@ -25,7 +25,6 @@
     </head>
     <body>
         <div>
-            <
             <form>
                 <div class="interface_main">
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
