@@ -55,8 +55,8 @@
                             Food food = foods.get(i);
 
                             out.write("<form class=\"square_1\" action=\"interfaceServlet\" method=\"post\">");
-                            out.write("<img src= " + "Public/photos/" + food.getImagePath() + " class=\"photo\" >");
-                            out.write("<p class=\"head\"> " + food.getName() + " </p>");
+                            out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo\" >");
+                            out.write("<p class=\"head\"> " + food.getName().toString() + " </p>");
 
                             out.write("<p class=\"text_div\">" + "ტიპი: " + food.getFoodtype().toString() + " </p>");
                             String ingredient_names = "";
@@ -74,32 +74,30 @@
                         if (searchFoods.isEmpty()) {
                             out.write("<p>კერძი ვერ მოიძებნა</p>");
                         }
-                            for (int i = 0; i < searchFoods.size(); i++) {
-                                int size = searchFoods.size();
-                                if (i >= size) {
-                                    break;
-                                }
-                                Food food = searchFoods.get(i);
-
-                                out.write("<form class=\"square_1\" action=\"interfaceServlet\" method=\"post\">");
-                                out.write("<img src= " + "Public/photos/" + food.getImagePath() + " class=\"photo\" >");
-                                out.write("<p class=\"head\"> " + food.getName() + " </p>");
-
-                                out.write("<p class=\"text_div\">" + "ტიპი: " + food.getFoodtype().toString() + " </p>");
-                                String ingredient_names = "";
-                                ArrayList<Ingredient> ins = food.getIngredients();
-                                for (Ingredient in : ins) {
-                                    ingredient_names += in.getName() + ",";
-                                }
-                                ingredient_names = ingredient_names.substring(0, ingredient_names.length() - 1);
-                                out.write("<p class=\"text_div2\" display:inline>" + "ინგრედიენტები: " + ingredient_names + "</p>");
-                                out.write("<input name=\"foodId\" type=\"hidden\" value=\"" + food.getId() + "\"/>");
-                                out.write("<button class=\"div_button\" maxlength=\"10\"  >ვრცლად</button>");
-                                out.write("</form>");
+                        for (int i = 0; i < searchFoods.size(); i++) {
+                            int size = searchFoods.size();
+                            if (i >= size) {
+                                break;
                             }
-                        } else if (searchFoods.isEmpty()) {
+                            Food food = searchFoods.get(i);
 
+                            out.write("<form class=\"square_1\" action=\"interfaceServlet\" method=\"post\">");
+                            out.write("<img src= " + "Public/photos/" + food.getImagePath() + " class=\"photo\" >");
+                            out.write("<p class=\"head\"> " + food.getName() + " </p>");
+
+                            out.write("<p class=\"text_div\">" + "ტიპი: " + food.getFoodtype().toString() + " </p>");
+                            String ingredient_names = "";
+                            ArrayList<Ingredient> ins = food.getIngredients();
+                            for (Ingredient in : ins) {
+                                ingredient_names += in.getName() + ",";
+                            }
+                            ingredient_names = ingredient_names.substring(0, ingredient_names.length() - 1);
+                            out.write("<p class=\"text_div2\" display:inline>" + "ინგრედიენტები: " + ingredient_names + "</p>");
+                            out.write("<input name=\"foodId\" type=\"hidden\" value=\"" + food.getId() + "\"/>");
+                            out.write("<button class=\"div_button\" maxlength=\"10\"  >ვრცლად</button>");
+                            out.write("</form>");
                         }
+                    }
                 %>
             </div>
         </div>

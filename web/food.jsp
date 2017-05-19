@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Ingredient"%>
 <%@page import="Dao.FoodDAOImpl"%>
 <%@page import="Dao.FoodDAO"%>
 <%@page import="Model.Food"%>
@@ -6,12 +8,11 @@
 <html>
     <head>
         <%
-            //int id = Integer.parseInt((String) request.getAttribute("id"));
-            //FoodDAO dao = new FoodDAOImpl();
-            //Food food = dao.getFoodById(id);
-            //out.write("<title>" + food.getName() + "</title>");
+            int id = Integer.parseInt((String) request.getAttribute("id"));
+            FoodDAO dao = new FoodDAOImpl();
+            Food food = dao.getFoodById(id);
+            out.write("<title>" + food.getName() + "</title>");
         %>
-        <title>rame</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="Public/css/style.css" type="text/css"/>
         <link rel="icon" type="image/png" href="Public/foto/icon2.png" />
@@ -34,53 +35,42 @@
             <input class="search" style="float:right" type="submit" value="ძებნა">
             <input class="search_1" style="float:right;font-size: 12px;" type="search" name="search">
         </form> 
-        <div class="interface_2">
-            <%
-                //out.write("<img src=\"" + "Public/photos/" + food.getImagePath() + " \"class=\"food_photo\"");
-                //out.write("<h1 style=\"display: inline-block\">" + food.getName() + "</h1");
-            %>
-            <img src="Public/foto/foodline.jpg" style="width :100%;">
-            <div style="display :inline-block;float: left"><img src="Public/foto/bg1.jpg" class="food_photo"></div>
-            <div class="food_name" ><h1>სახელი</h1>
-                <h3 style="float: left;">სახეობა:</h3></div>
-            
-            <table>
-  <tr>
-    <th>სახელი</th>
-    <th>რაოდენობა</th>
-    <th>ტიპი</th>
-    <th>აღწერა</th>
-  </tr>
-  <tr>
-    <td>რამე1</td>
-    <td>რამე2</td>
-    <td>რამე3</td>
-    <td>რამე3</td>
-  </tr>
-  <tr>
-    <td>რამე1</td>
-    <td>რამე2</td>
-    <td>რამე3</td>
-    <td>რამე3</td>
-  </tr>
-  <tr>
-    <td>რამე1</td>
-    <td>რამე2</td>
-    <td>რამე3</td>
-    <td>რამე3</td>
-  </tr>
-  <tr>
-    <td>რამე1</td>
-    <td>რამე2</td>
-    <td>რამე3</td>
-    <td>მაქსიმუმ ხუთი სიტყვა</td>
-  </tr>
-</table>
-            <br>
-            <h2>მომზადების წესი</h2>
-                <h3 class="cooking_way">სადასდასდასფსადფა[jfoioahsgoifujgposdjgpdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdvvdfiashdfoiasdvdfiashdfoiasddfiashdfoiasddfiashdfoiasddfiashdfoiasdoasdgjsagfdgdf</h3>
-           
-        </div>
+        <%
+            out.write("<div class=\"interface_2\">");
 
-    </body>
+            out.write("<img src=\"Public/foto/foodline.jpg\" class=\"photo_food\">");
+            out.write("<div style=\"display :inline-block;float: left\"><img src= \"Public/photos/" + food.getImagePath() +" \" class=\"food_photo\"></div>");
+
+            out.write("<div class=\"food_name\" ><h1>" + food.getName() + "</h1>");
+            out.write("<h3 style=\"float: left;\">" + "ტიპი: " + food.getFoodtype().toString() + "</h3>");
+            out.write("</div>");
+
+            out.write("<table>");
+            out.write("<tr>");
+            out.write("<th>სახელი</th>");
+            out.write("<th>რაოდენობა</th>");
+            out.write("<th></th>");
+            out.write("<th>აღწერა</th>");
+            out.write("</tr>");
+
+            ArrayList<Ingredient> ins = food.getIngredients();
+            out.write("<tr>");
+            for (Ingredient in : ins) {
+                out.write("<td>" + in.getName() + "</td>");
+                out.write("<td>" + in.getQuantity() + "</td>");
+                out.write("<td>" + in.getType() + "</td>");
+                out.write("<td>" + in.getComment() + "</td>");
+                out.write("</tr>");
+            }
+            out.write("</table>");
+
+            out.write("<br>");
+
+            out.write("<h2>მომზადების წესი</h2>");
+
+            out.write("<h3 class=\"cooking_way\">" + food.getCooking_way() + "</h3>");
+        %>
+    </div>
+
+</body>
 </html>
