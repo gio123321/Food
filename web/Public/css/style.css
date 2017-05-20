@@ -84,7 +84,6 @@ input[type=password]
     height: 60px;
     background: gray;
     text-align: center;
-    float: left;
 }
 
 .interface_main
@@ -265,7 +264,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     text-align: left;
     background-color: gainsboro;
     word-wrap: break-word;
-    
+
     padding-left:  5%;
     padding-right:  5%;
     padding-bottom:  5px;
@@ -274,4 +273,12 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 .photo_food{
     width: 100%;
+}
+
+.food_1{
+    width: 80%;
+    background: white;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: center;
 }

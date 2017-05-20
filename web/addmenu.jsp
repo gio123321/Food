@@ -13,7 +13,15 @@
         </style>
     </head>
     <body>
-        <form align="center"  action="addMenuServlet" name="addMenuForm" method="post"><
+        <form>
+         <div class="interface_1">
+                <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
+                <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
+                <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
+                <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">მენიუს შერჩევა</button>
+            </div>
+        </form>
+        <form align="center"  action="addMenuServlet" name="addMenuForm" method="post">
             <div class="add">
                 <h1>მენიუს დამატება</h1>
                 <h2>სახელი</h2>
@@ -36,13 +44,13 @@
                     <br>
                     <br>
                     <script>
-                        
+
                         function getSelectedValue() {
                             var selector = document.getElementById("inQuantity");
                             var value = selector[selector.selectedIndex].value;
                             return value;
                         }
-                        
+
                         var counter = 1;
 
                         addBoxes = function () {

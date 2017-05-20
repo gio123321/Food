@@ -71,7 +71,7 @@ public class Ingredient {
     public static String objectsToString(ArrayList<Ingredient> ingredients) {
         String s = "";
         for (int i = 0; i < ingredients.size(); i++) {
-            s += ingredients.get(i).name + "&" + ingredients.get(i).quantity + "&" + ingredients.get(i).type + "&" + ingredients.get(i).comment + "@";
+            s += ingredients.get(i).name + "&" + ingredients.get(i).quantity + "&" + ingredients.get(i).type.name() + "&" + ingredients.get(i).comment + "@";
         }
         return s;
     }
