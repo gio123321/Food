@@ -32,7 +32,7 @@ public class MenuDAOImpl implements MenuDAO {
             pstmt = con.prepareStatement("INSERT INTO Menu (name,menutype,beverage) VALUES (?,?,?) RETURNING id");
             pstmt.setString(1, menu.getName());
             pstmt.setString(2, menu.getType().name());
-            pstmt.setString(3, menu.getBeverage().getName());
+            pstmt.setString(3, menu.getBeverage().name());
             
             ResultSet rs = pstmt.executeQuery();
             if(rs.next()){
