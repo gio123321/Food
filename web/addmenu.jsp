@@ -31,6 +31,10 @@
                 <select name="type" class="styled-select">
                     <option value="test">test</option>
                 </select>
+                <h2>სასმელი</h2>
+                <select name="type" class="styled-select">
+                    <option value="test">test</option>
+                </select>
                 <div id='div'>
                     <br>
                     <br>
@@ -39,7 +43,7 @@
                 <button class="button_addfood">კერძების არჩევა</button>
                 <br>
                 <%
-                    if (request.getAttribute("addFoodFailed") != null && request.getAttribute("addFoodFailed") == Boolean.TRUE) {
+                    if (request.getAttribute("addMenuFailed") != null && request.getAttribute("addMenuFailed") == Boolean.TRUE) {
                         out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
                     }
                 %>
