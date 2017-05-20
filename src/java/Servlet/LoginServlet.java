@@ -15,6 +15,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        request.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
@@ -30,7 +31,8 @@ public class LoginServlet extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
             rd.forward(request, response);
         } else if (!username.isEmpty() && !password.isEmpty()) {
-            
+            RequestDispatcher rd = request.getRequestDispatcher("Interface.jsp");
+            rd.forward(request, response);
         }
     }
 }

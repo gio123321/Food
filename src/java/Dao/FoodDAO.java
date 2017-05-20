@@ -8,5 +8,8 @@ public interface FoodDAO {
     void addFood(Food food);
 
     ArrayList<Food> getAllFoods();
-
+    
+    Food getFoodById(int id);
+    
+    ArrayList<Food> getFoodByName(String name);
 }

@@ -1,7 +1,8 @@
 CREATE TABLE menu (
 
 	id SERIAL PRIMARY KEY,
-	menutype VARCHAR(30)
-	
+	name VARCHAR(30),
+	menutype VARCHAR(30),
+	beverage VARCHAR(30)
 
 );

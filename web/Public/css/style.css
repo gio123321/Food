@@ -28,6 +28,7 @@ input[type=text]
     box-shadow: 2px 2px 0 gray inset;
 }
 
+
 input[type=password]
 {
     background-color: white;
@@ -65,11 +66,219 @@ input[type=password]
     text-decoration: none;
     display: inline-block;
     font-size: 17px;
+    margin-top: 5px;
 
 }
 
 
+.addfood2{
+    width: 100%;
+    height: 60px;
+    background: gray;
+    text-align: center;
+}
+
+.interface_1
+{
+    width: 100%;
+    height: 60px;
+    background: gray;
+    text-align: center;
+}
+
+.interface_main
+{
+    width: 80%;
+    height: 60px;
+    background: gray;
+    text-align: center;
+    float: left;
+}
+
+.search_form{
+    width: 20%;
+    height: 60px;
+    text-align: center;
+    display: inline-block;
+    background: gray;
+}
+
+.interface_2
+{
+    width: 80%;
+    background: white;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: center;
+}
+
+.add
+{
+    text-align: center;
+    width: 500px;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 5%;   
+}
+
+#text{
+    resize:none;
+}
+#div{
+    align-content: center;
+    margin-right: 5px;
+    resize: none ;
+
+}
+
+.insText{
+    resize: none ;
+}
+.center{
+    resize: none ;
+}
+#txtarea{
+    resize: none;
+}
+#btn{
+    text-align: center;
+
+}
+
+#commentBox{
+    resize : none;
+}
+
+.button_1{
+    background-color: #4CAF50; /* მწვანე */
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 11px;
+}
+.search
+{
+    padding: 6px 18px;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+.search_1
+{
+    padding: 7px 18px;
+    font-size: 12px;
+    margin-top: 11.5px;
+}
+
+.square_1
+{
+    width: 49.5%;
+    height: 170px;
+    background: gray;
+    border-radius: 5px;
+    display: inline-block;
+    margin-left:3px;
+    margin-top: 3px;
+    float: left;
+
+}
+
+.photo{
+    height: 150px;
+    left: 10px;
+    float: left;
+    width: 210px;
+    padding: 8px;
+}
+
+.head{
+    margin-right: 45px;
+}
+
+.text_div{
+    text-align: left;
+    margin-top: 30px;
+}
+.text_div2{
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.div_button{
+    float: right;
+    margin-right: 5px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: 17px; 
+}
+
+.food_photo{
+    display: inline-block;
+    padding-left:  11px;
+    padding-top: 5px;
+    border-color: gray;
+    width: 350px;
+    height: 250px;
+}
 
 
+.button_addfood{
+    background-color: #4CAF50; /* მწვანე */
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 3px;
+    font-size: 15px;
 
+}
+.food_name{
+    display: inline-block;
+}
 
+table {
+    border-collapse: collapse;
+    margin-top: 14px;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+.cooking_way{
+    border-radius: 14px;
+    width: 90%;
+    text-align: left;
+    background-color: gainsboro;
+    word-wrap: break-word;
+
+    padding-left:  5%;
+    padding-right:  5%;
+    padding-bottom:  5px;
+    padding-top: 5px;
+}
+
+.photo_food{
+    width: 100%;
+}
+
+.food_1{
+    width: 80%;
+    background: white;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: center;
+}

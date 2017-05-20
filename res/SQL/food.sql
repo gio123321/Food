@@ -4,6 +4,6 @@ CREATE TABLE food(
 	name VARCHAR(30),
 	foodtype VARCHAR(10),
 	cooking_way TEXT,
-	ingredients TEXT
-
+	ingredients TEXT,
+	imagePath TEXT
 );
