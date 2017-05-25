@@ -87,7 +87,7 @@
                 </form>
                 <form class="square_2">
                     <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
+                    <h2 style="display: inline-block;padding-left: 4.8px;">სახელი</h2>
                     <input type="checkbox" class="checkbox_1">
                 </form>
                 
