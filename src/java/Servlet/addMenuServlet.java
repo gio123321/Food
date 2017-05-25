@@ -22,7 +22,11 @@ public class addMenuServlet extends HttpServlet {
             request.setAttribute("addMenuFailed", true);
             RequestDispatcher rd = request.getRequestDispatcher("addmenu.jsp");
             rd.forward(request, response);
+        }else{
+            request.setAttribute("name", name);
+            request.setAttribute("type", type);
+            RequestDispatcher rd = request.getRequestDispatcher("chooseFoods.jsp");
+            rd.forward(request, response);
         }
-    
     }
 }
