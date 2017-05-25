@@ -18,6 +18,10 @@
         <servlet-name>searchServlet</servlet-name>
         <url-pattern>/searchServlet</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>interfaceServlet</servlet-name>
+        <url-pattern>/interfaceServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -26,6 +30,10 @@
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>Servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>interfaceServlet</servlet-name>
+        <servlet-class>Servlet.interfaceServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -54,14 +62,6 @@
     <servlet-mapping>
         <servlet-name>addMenuServlet</servlet-name>
         <url-pattern>/addMenuServlet</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>interfaceServlet</servlet-name>
-        <servlet-class>Servlet.interfaceServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>interfaceServlet</servlet-name>
-        <url-pattern>/interfaceServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>foodServlet</servlet-name>
