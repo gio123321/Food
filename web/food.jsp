@@ -49,7 +49,6 @@
             out.write("<tr>");
             out.write("<th>სახელი</th>");
             out.write("<th>რაოდენობა</th>");
-            out.write("<th></th>");
             out.write("<th>აღწერა</th>");
             out.write("</tr>");
 
@@ -57,8 +56,7 @@
             out.write("<tr>");
             for (Ingredient in : ins) {
                 out.write("<td>" + in.getName() + "</td>");
-                out.write("<td>" + in.getQuantity() + "</td>");
-                out.write("<td>" + in.getType() + "</td>");
+                out.write("<td>" + in.getQuantity() +" " + in.getType() + "</td>");
                 out.write("<td>" + in.getComment() + "</td>");
                 out.write("</tr>");
             }
