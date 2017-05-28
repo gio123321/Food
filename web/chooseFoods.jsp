@@ -1,3 +1,8 @@
+<%@page import="Dao.FoodDAOImpl"%>
+<%@page import="java.util.Collections"%>
+<%@page import="Dao.FoodDAO"%>
+<%@page import="Model.Food"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,81 +20,30 @@
     <body>
         <div class="interface_2">
                 <img src="Public/foto/interface.jpg" style="width:100%;">
-               <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;margin-bottom: 70px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                                <form class="square_2">
-                    <img src="Public/foto/bg2.jpg" class="photo_2">
-                    <h2 style="float:left;display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>
-                <form class="square_2">
-                    <img src="Public/foto/bg1.jpg" class="photo_2">
-                    <h2 style="display: inline-block;padding-left: 4.8px;">სახელი</h2>
-                    <input type="checkbox" class="checkbox_1">
-                </form>   
+                <%
+                    ArrayList<Food> searchFoods = (ArrayList) request.getAttribute("searchList");
+
+                    if (searchFoods == null) {
+                        ArrayList<Food> foods = new ArrayList<Food>();
+                        FoodDAO dao = new FoodDAOImpl();
+                        foods = dao.getAllFoods();
+                        Collections.shuffle(foods);
+
+                        for (int i = 0; i < 20; i++) {
+                            int size = foods.size();
+                            if (i >= size) {
+                                break;
+                            }
+                            Food food = foods.get(i);
+
+                            out.write("<form class=\"square_2\">");
+                            out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo_2\" >");
+                            out.write("<h2 style=\"float:left;display: inline-block;padding-left: 4.8px;\"> " + food.getName().toString() + " </h2>");
+                            out.write("<input type=\"checkbox\" class=\"checkbox_1\">");
+                            out.write("</form>");
+                        }
+                    }
+                %>
         </div>
     </body>
 </html>
