@@ -14,7 +14,7 @@ public class Food {
     private FoodType foodtype;
 
     private String cooking_way;
-    
+
     private String imagePath;
 
     public Food() {
@@ -44,7 +44,7 @@ public class Food {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -84,11 +84,10 @@ public class Food {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
-    
 
     @Override
     public String toString() {
-        return id + " " + ingredients + " " + name + " " + foodtype + " " + cooking_way;
+        return id + " " + name + " " + ingredients + " " + " " + foodtype + " " + cooking_way;
     }
 
 }

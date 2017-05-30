@@ -35,6 +35,15 @@ public class Menu {
         this.beverage = beverage;
     }
 
+    public Menu(int id, String name, MenuType type, BeverageType beverage) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.beverage = beverage;
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -74,4 +83,11 @@ public class Menu {
     public void setBeverage(BeverageType beverage) {
         this.beverage = beverage;
     }
+
+    @Override
+    public String toString() {
+        return  id + " " + name + " " + type + " " + Foods + " " + beverage;
+    }
+    
+    
 }
