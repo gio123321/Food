@@ -44,6 +44,7 @@
                         }
                     }
                 %>
+                <button class="button_choose">არჩევა</button>
         </div>
     </body>
 </html>
