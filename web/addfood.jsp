@@ -25,7 +25,7 @@
             <div class="add">
                 <h1>კერძის დამატება</h1>
                 <h2>სახელი</h2>
-                <input type="text" name="name"/> <br>
+                <input type="text" name="name" maxlength="29"/> <br>
                 <h2>სურათი</h2>
                 <input type="file" name="file" size="50" />
                 <h2>სახეობა</h2>

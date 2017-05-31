@@ -36,9 +36,9 @@
                             }
                             Food food = foods.get(i);
 
-                            out.write("<form class=\"square_2\">");
+                            out.write("<form class=\"square_3\">");
                             out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo_2\" >");
-                            out.write("<h2 style=\"float:left;display: inline-block;padding-left: 4.8px;\"> " + food.getName().toString() + " </h2>");
+                            out.write("<h2 class=\"choosefoods_name\"> " + food.getName().toString() + " </h2>");
                             out.write("<input type=\"checkbox\" class=\"checkbox_1\">");
                             out.write("</form>");
                         }
