@@ -317,14 +317,15 @@ tr:nth-child(even){background-color: #f2f2f2}
     padding: 10px 18px;
     text-align: center;
     text-decoration: none;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
+    margin-top : 5px;
     font-size: 20px;
 }
 
 .choosefoods_name{
     
     overflow: hidden;
-    float: left;
+    
     display: inline-block;
     padding-left: 4.8px;
     max-width: 145px;
@@ -333,13 +334,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 .square_3
 {
     width: 19.65%;
-    height: 210px;
+    height: 100%;
     background: gray;
     border-radius: 5px;
     display: inline-block;
     margin-left:3px;
     margin-top: 3px;
-    float: bottom;
     text-align: center;
-    bottom:0;
+    bottom: 10px;
+    
 }

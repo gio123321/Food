@@ -34,17 +34,21 @@
                             if (i >= size) {
                                 break;
                             }
+                            out.write("<form>");
                             Food food = foods.get(i);
 
-                            out.write("<form class=\"square_3\">");
+                            out.write("<div class=\"square_3\">");
                             out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo_2\" >");
                             out.write("<h2 class=\"choosefoods_name\"> " + food.getName().toString() + " </h2>");
                             out.write("<input type=\"checkbox\" class=\"checkbox_1\">");
-                            out.write("</form>");
-                        }
+                            out.write("</div>");
+                           
+                        } out.write("</form>");
+                        
+                         out.write("<button class=\"button_choose\">არჩევა</button>");
                     }
                 %>
-                <button class="button_choose">არჩევა</button>
+                
         </div>
     </body>
 </html>
