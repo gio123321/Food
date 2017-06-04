@@ -32,7 +32,7 @@
                     <option value="test">test</option>
                 </select>
                 <h2>სასმელი</h2>
-                <select name="type" class="styled-select">
+                <select name="beverage" class="styled-select">
                     <option value="test">test</option>
                 </select>
                 <div id='div'>
@@ -45,6 +45,9 @@
                 <%
                     if (request.getAttribute("addMenuFailed") != null && request.getAttribute("addMenuFailed") == Boolean.TRUE) {
                         out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
+                    }
+                    else if(request.getAttribute("chooseFoodsFailed") != null && request.getAttribute("chooseFoodsFailed") == Boolean.TRUE) {
+                        out.write("<p style=\"color:red;\">გთხოვთ აირჩიოთ ორზე მეტი კერძი!</p>");
                     }
                 %>
             </div>

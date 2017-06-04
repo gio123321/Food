@@ -14,6 +14,10 @@
         <servlet-name>searchServlet</servlet-name>
         <servlet-class>Servlet.searchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>chooseFoodsServlet</servlet-name>
+        <servlet-class>Servlet.chooseFoodsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchServlet</servlet-name>
         <url-pattern>/searchServlet</url-pattern>
@@ -21,6 +25,10 @@
     <servlet-mapping>
         <servlet-name>interfaceServlet</servlet-name>
         <url-pattern>/interfaceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>chooseFoodsServlet</servlet-name>
+        <url-pattern>/chooseFoodsServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

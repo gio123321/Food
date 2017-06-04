@@ -18,5 +18,7 @@ public enum BeverageType {
         public String toString() {
             return "გაზიანი სასმელი";
         }
+       
    }
+   ,test
 }

@@ -19,36 +19,60 @@
     </head>
     <body>
         <div class="interface_2">
-                <img src="Public/foto/interface.jpg" style="width:100%;">
-                <%
-                    ArrayList<Food> searchFoods = (ArrayList) request.getAttribute("searchList");
+            <img src="Public/foto/interface.jpg" style="width:100%;">
+            <%
+                ArrayList<Food> searchFoods = (ArrayList) request.getAttribute("searchList");
+                String name = (String) request.getAttribute("name");
+                String type = (String) request.getAttribute("type");
+                String beverage = (String) request.getAttribute("beverage");
 
-                    if (searchFoods == null) {
-                        ArrayList<Food> foods = new ArrayList<Food>();
-                        FoodDAO dao = new FoodDAOImpl();
-                        foods = dao.getAllFoods();
-                        Collections.shuffle(foods);
+                if (searchFoods == null) {
+                    ArrayList<Food> foods = new ArrayList<Food>();
+                    FoodDAO dao = new FoodDAOImpl();
+                    foods = dao.getAllFoods();
+                    Collections.shuffle(foods);
 
-                        for (int i = 0; i < 20; i++) {
-                            int size = foods.size();
-                            if (i >= size) {
-                                break;
-                            }
-                            out.write("<form>");
-                            Food food = foods.get(i);
+                    for (int i = 0; i < 20; i++) {
+                        int size = foods.size();
+                        if (i >= size) {
+                            break;
+                        }
+                        out.write("<form action=\"chooseFoodsServlet\" method=\"post\">");
+                        Food food = foods.get(i);
 
-                            out.write("<div class=\"square_3\">");
-                            out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo_2\" >");
-                            out.write("<h2 class=\"choosefoods_name\"> " + food.getName().toString() + " </h2>");
-                            out.write("<input type=\"checkbox\" class=\"checkbox_1\">");
-                            out.write("</div>");
-                           
-                        } out.write("</form>");
-                        
-                         out.write("<button class=\"button_choose\">არჩევა</button>");
+                        out.write("<div class=\"square_3\">");
+                        out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo_2\" >");
+                        out.write("<h2 class=\"choosefoods_name\"> " + food.getName().toString() + " </h2>");
+                        out.write("<input type=\"checkbox\" class=\"checkbox_1\" name=\"box\" value=\"" + food.getId() + "\">");
+                        out.write("</div>");
                     }
-                %>
-                
+
+                    out.write("<div>");
+                    out.write("<input type=\"submit\" value=\"არჩევა\" onclick=\"(getCheckedCheckboxesFor('box'));\" class=\"button_choose\">");
+                    out.write("<input id=\"values\" name=\"values\" type=\"hidden\"/>");
+                    out.write("<input type=\"hidden\" value=\"" + name + "\" name=\"name\"/>");
+                    out.write("<input type=\"hidden\" value=\"" + type + "\" name=\"type\"/>");
+                    out.write("<input type=\"hidden\" value=\"" + beverage + "\" name=\"beverage\"/>");
+                    out.write("</div>");
+
+                    request.setAttribute("name", name);
+                    request.setAttribute("type", type);
+                    request.setAttribute("beverage", beverage);
+                    out.write("</form>");
+
+                }
+            %>
+            <script>
+                function getCheckedCheckboxesFor(checkboxName) {
+                    var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+                    Array.prototype.forEach.call(checkboxes, function (el) {
+                        values.push(el.value);
+                    });
+                    document.getElementById("values").value = values;
+                    return values;
+                }
+
+            </script>
         </div>
     </body>
 </html>
