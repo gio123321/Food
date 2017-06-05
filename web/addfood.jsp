@@ -19,7 +19,7 @@
                 <div class="addfood2">
                     <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
-                    <button type="submit" class="button_1" name="action" value="button1">მენიუს შერჩევა</button>
+                    <button type="submit" class="button_1" name="action" value="button1" formaction="chooseMenus.jsp">მენიუს შერჩევა</button>
                 </div>
          
             <div class="add">

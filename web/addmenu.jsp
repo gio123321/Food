@@ -18,7 +18,7 @@
                 <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
                 <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
                 <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
-                <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">მენიუს შერჩევა</button>
+                <button type="submit" class="button_1" name="action" value="button1" formaction="chooseMenus.jsp">მენიუს შერჩევა</button>
             </div>
         </form>
         <form align="center"  action="addMenuServlet" name="addMenuForm" method="post">
@@ -29,11 +29,14 @@
                 <br>
                 <h2>მენიუს ტიპი</h2>
                 <select name="type" class="styled-select">
+                    
                     <option value="test">test</option>
                 </select>
                 <h2>სასმელი</h2>
                 <select name="beverage" class="styled-select">
-                    <option value="test">test</option>
+                    <option value="water">წყალი</option>
+                    <option value="wine">ღვინო</option>
+                    <option value="soda">გაზიანი სასმელი</option>
                 </select>
                 <div id='div'>
                     <br>

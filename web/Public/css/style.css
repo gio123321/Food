@@ -344,3 +344,7 @@ tr:nth-child(even){background-color: #f2f2f2}
     bottom: 10px;
     
 }
+.foodnotfoundlabel{
+    margin-bottom : 10px;
+    color: red;
+}

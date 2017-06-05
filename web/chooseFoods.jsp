@@ -41,7 +41,7 @@
                         Food food = foods.get(i);
 
                         out.write("<div class=\"square_3\">");
-                        out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo_2\" >");
+                        out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" onerror=\"this.src='Public/foto/icon2.png'\" class=\"photo_2\" >");
                         out.write("<h2 class=\"choosefoods_name\"> " + food.getName().toString() + " </h2>");
                         out.write("<input type=\"checkbox\" class=\"checkbox_1\" name=\"box\" value=\"" + food.getId() + "\">");
                         out.write("</div>");

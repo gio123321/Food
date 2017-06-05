@@ -96,14 +96,41 @@ public class MenuDAOImpl implements MenuDAO {
             pstmt.setInt(1, menu.getId());
             ResultSet rs = pstmt.executeQuery();
 
-            if (rs.next()) {
+            while(rs.next()) {
+                
                 int foodId = rs.getInt("food_id");
                 al.add(foodId);
+                
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return al;
+    }
+
+    @Override
+    public ArrayList<Menu> getMenusByName(String name) {
+        ArrayList<Menu> menus = new ArrayList<>();
+        try {
+            pstmt = con.prepareStatement("SELECT * FROM menu WHERE name = ?");
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String menutypestr = rs.getString("menutype");
+                MenuType menutype = MenuType.valueOf(menutypestr);
+                String beveragestr = rs.getString("beverage");
+                BeverageType beverage = BeverageType.valueOf(beveragestr);
+
+                Menu menu = new Menu(id, name, menutype, beverage);
+                menus.add(menu);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return menus;
     }
 
 }

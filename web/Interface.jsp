@@ -1,3 +1,4 @@
+<%@page import="javax.websocket.OnError"%>
 <%@page import="java.util.Collections"%>
 <%@page import="java.util.Collection"%>
 <%@page import="org.apache.catalina.ha.backend.CollectedInfo"%>
@@ -30,15 +31,15 @@
                     <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
                     <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
-                    <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">მენიუს შერჩევა</button>
+                    <button type="submit" class="button_1" name="action" value="button1" formaction="chooseMenus.jsp">მენიუს შერჩევა</button>
                 </div>
             </form>
             <form action="searchServlet" method="post" class="search_form">
                 <input class="search" style="float:right" type="submit" value="ძებნა">
-                <input class="search_1" style="float:right;font-size: 12px;" type="search" name="search">
+                <input class="search_1" style="float:right;font-size: 12px;" type="search" name="search" placeholder="კერძის ძებნა">
             </form>
             <div class="interface_2">
-                <img src="Public/foto/interface.jpg" style="width:100%;">
+                <img src="Public/foto/interface.jpg" style="width:100%; height:250px;">
                 <%
                     ArrayList<Food> searchFoods = (ArrayList) request.getAttribute("searchList");
 
@@ -56,7 +57,8 @@
                             Food food = foods.get(i);
 
                             out.write("<form class=\"square_1\" action=\"interfaceServlet\" method=\"post\">");
-                            out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo\" >");
+                            out.write("<img src= \"" + "Public/photos/" + food.getImagePath() + "\" class=\"photo\" onerror=\"this.src='Public/foto/icon2.png'\">");
+
                             out.write("<p class=\"head\"> " + food.getName().toString() + " </p>");
 
                             out.write("<p class=\"text_div\">" + "ტიპი: " + food.getFoodtype().toString() + " </p>");
@@ -73,7 +75,7 @@
                         }
                     } else if (searchFoods != null) {
                         if (searchFoods.isEmpty()) {
-                            out.write("<p>კერძი ვერ მოიძებნა</p>");
+                            out.write("<p class=\"foodnotfoundlabel\">კერძი ვერ მოიძებნა</p>");
                         }
                         for (int i = 0; i < searchFoods.size(); i++) {
                             int size = searchFoods.size();
@@ -83,7 +85,7 @@
                             Food food = searchFoods.get(i);
 
                             out.write("<form class=\"square_1\" action=\"interfaceServlet\" method=\"post\">");
-                            out.write("<img src= " + "Public/photos/" + food.getImagePath() + " class=\"photo\" >");
+                            out.write("<img src= " + "Public/photos/" + food.getImagePath() + " class=\"photo\" onerror=\"this.src='Public/foto/icon2.png'\" >");
                             out.write("<p class=\"head\"> " + food.getName() + " </p>");
 
                             out.write("<p class=\"text_div\">" + "ტიპი: " + food.getFoodtype().toString() + " </p>");

@@ -39,7 +39,7 @@
             out.write("<div class=\"interface_2\">");
 
             out.write("<img src=\"Public/foto/foodline.jpg\" class=\"photo_food\">");
-            out.write("<div style=\"display :inline-block;float: left\"><img src= \"Public/photos/" + food.getImagePath() +" \" class=\"food_photo\"></div>");
+            out.write("<div style=\"display :inline-block;float: left\"><img src= \"Public/photos/" + food.getImagePath() +" \" onerror=\"this.src='Public/foto/icon2.png'\" class=\"food_photo\"></div>");
 
             out.write("<div class=\"food_name\" ><h1>" + food.getName() + "</h1>");
             out.write("<h3 style=\"float: left;\">" + "ტიპი: " + food.getFoodtype().toString() + "</h3>");
@@ -68,7 +68,6 @@
 
             out.write("<h3 class=\"cooking_way\">" + food.getCooking_way() + "</h3>");
         %>
-    </div>
-
+    
 </body>
 </html>

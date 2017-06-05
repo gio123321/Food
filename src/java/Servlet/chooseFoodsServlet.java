@@ -36,6 +36,7 @@ public class chooseFoodsServlet extends HttpServlet {
             
             response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
+            request.setAttribute("chooseFoodsFailed", true);
             RequestDispatcher rd = request.getRequestDispatcher("addmenu.jsp");
             rd.forward(request, response);
             
@@ -54,10 +55,10 @@ public class chooseFoodsServlet extends HttpServlet {
             Food food = fdao.getFoodById(asId);
             food.setId(asId);
             foods.add(food);
-
+        }
             Menu menu = new Menu(name, MenuType.valueOf(type), foods, BeverageType.valueOf(beverage));
             MenuProcessor.addMenu(menu);
-        }
+        
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 

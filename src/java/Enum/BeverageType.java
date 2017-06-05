@@ -1,7 +1,7 @@
 package Enum;
 
 public enum BeverageType {
-    wather {
+    water {
         @Override
         public String toString() {
             return "წყალი";

@@ -13,5 +13,7 @@ public interface MenuDAO {
     ArrayList<Menu> getMenus();
     
     ArrayList<Integer> getFoodIdsForMenu(Menu menu);
+    
+    ArrayList<Menu> getMenusByName(String name);
    
     }
