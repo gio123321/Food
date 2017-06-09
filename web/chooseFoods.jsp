@@ -19,7 +19,7 @@
     </head>
     <body>
         <div class="interface_2">
-            <img src="Public/foto/interface.jpg" style="width:100%;">
+            <img src="Public/foto/interface.jpg" style="width:100%; height:250px;">
             <%
                 ArrayList<Food> searchFoods = (ArrayList) request.getAttribute("searchList");
                 String name = (String) request.getAttribute("name");

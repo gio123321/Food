@@ -348,3 +348,13 @@ tr:nth-child(even){background-color: #f2f2f2}
     margin-bottom : 10px;
     color: red;
 }
+.search_button{
+    float : right;
+    background-color: #4CAF50; /* მწვანე */
+    border: none;
+    color: white;
+    height: 31px;
+    padding: 6px 18px;
+    font-size: 13px;
+    margin-top: 12px;
+}

@@ -8,7 +8,7 @@
         <link rel="icon" type="image/png" href="Public/foto/icon2.png" />
         <style>
             body{
-                background: url("Public/foto/bg2.jpg");
+                background: url("Public/foto/bg1.jpg");
             }
         </style>
     </head>
@@ -17,7 +17,6 @@
          <div class="interface_1">
                 <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
                 <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
-                <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
                 <button type="submit" class="button_1" name="action" value="button1" formaction="chooseMenus.jsp">მენიუს შერჩევა</button>
             </div>
         </form>

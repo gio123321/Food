@@ -35,7 +35,7 @@
                 </div>
             </form>
             <form action="searchServlet" method="post" class="search_form">
-                <input class="search" style="float:right" type="submit" value="ძებნა">
+                <input style="float:right" class="search_button" type="submit" value="ძებნა">
                 <input class="search_1" style="float:right;font-size: 12px;" type="search" name="search" placeholder="კერძის ძებნა">
             </form>
             <div class="interface_2">
