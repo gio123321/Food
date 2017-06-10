@@ -20,7 +20,7 @@ public class searchServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
         String search = request.getParameter("search");
-
+        
         FoodDAO dao = new FoodDAOImpl();
         ArrayList<Food> foods = dao.getFoodByName(search);
         request.setAttribute("searchList", foods);

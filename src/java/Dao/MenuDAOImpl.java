@@ -4,6 +4,7 @@ import Enum.BeverageType;
 import Enum.MenuType;
 import Model.Food;
 import Model.Menu;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -33,7 +34,12 @@ public class MenuDAOImpl implements MenuDAO {
     public int addmenu(Menu menu) {
         try {
             pstmt = con.prepareStatement("INSERT INTO Menu (name,menutype,beverage) VALUES (?,?,?) RETURNING id");
-            pstmt.setString(1, menu.getName());
+
+            String name = menu.getName();
+            byte namebytes[] = name.getBytes("ISO-8859-1");
+            name = new String(namebytes, "UTF-8");
+
+            pstmt.setString(1, name);
             pstmt.setString(2, menu.getType().name());
             pstmt.setString(3, menu.getBeverage().name());
 
@@ -42,7 +48,7 @@ public class MenuDAOImpl implements MenuDAO {
                 int id = rs.getInt(1);
                 return id;
             }
-        } catch (SQLException ex) {
+        } catch (SQLException | UnsupportedEncodingException ex) {
             System.out.println(ex.getMessage());
         }
         return 0;
@@ -96,11 +102,11 @@ public class MenuDAOImpl implements MenuDAO {
             pstmt.setInt(1, menu.getId());
             ResultSet rs = pstmt.executeQuery();
 
-            while(rs.next()) {
-                
+            while (rs.next()) {
+
                 int foodId = rs.getInt("food_id");
                 al.add(foodId);
-                
+
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
