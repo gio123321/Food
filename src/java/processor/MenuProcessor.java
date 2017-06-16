@@ -23,39 +23,41 @@ public class MenuProcessor {
         FoodDAO foodDao = new FoodDAOImpl();
         ArrayList<Menu> menus1 = menuDAO.getMenus();
         
+
+       
         for (Menu menu : menus1) {
             ArrayList<Integer> ids = menuDAO.getFoodIdsForMenu(menu);
             
-            for (Integer n : ids) {
-                ArrayList<Food> foods = new ArrayList<>();
+            ArrayList<Food> foods = new ArrayList<>();
+            for (int n : ids) {
+               
                 foods.add(foodDao.getFoodById(n));
                 menu.setFoods(foods);
-                menus.add(menu);
             }
+            
+            menus.add(menu);
         }
         return menus;
     }
-        public static ArrayList<Menu> getMenusByName(String name) {
-            ArrayList<Menu> menus = new ArrayList<>();
-            ArrayList<Menu> menus1 = new ArrayList<>();
-            FoodDAO foodDao = new FoodDAOImpl();
-            menus1 = menuDAO.getMenusByName(name);
-            if(menus1.isEmpty()){
-                return null;
-            }
-            for (Menu menu : menus1) {
+
+    public static ArrayList<Menu> getMenusByName(String name) {
+        ArrayList<Menu> menus = new ArrayList<>();
+        ArrayList<Menu> menus1 = new ArrayList<>();
+        FoodDAO foodDao = new FoodDAOImpl();
+        menus1 = menuDAO.getMenusByName(name);
+        
+        for (Menu menu : menus1) {
+            ArrayList<Food> foods = new ArrayList<>();
             ArrayList<Integer> ids = menuDAO.getFoodIdsForMenu(menu);
-            
-            for (Integer n : ids) {
-                ArrayList<Food> foods = new ArrayList<>();
+           
+            for (int n : ids) {
+                
                 foods.add(foodDao.getFoodById(n));
                 menu.setFoods(foods);
-                menus.add(menu);
             }
             
+            menus.add(menu);
         }
-            return menus;
-        }
+        return menus;
+    }
 }
-        
-

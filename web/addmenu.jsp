@@ -49,7 +49,7 @@
                         out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
                     }
                     else if(request.getAttribute("chooseFoodsFailed") != null && request.getAttribute("chooseFoodsFailed") == Boolean.TRUE) {
-                        out.write("<p style=\"color:red;\">გთხოვთ აირჩიოთ ორზე მეტი კერძი!</p>");
+                        out.write("<p style=\"color:red;\">გთხოვთ აირჩიოთ სამზე მეტი კერძი!</p>");
                     }
                 %>
             </div>

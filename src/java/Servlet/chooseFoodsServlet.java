@@ -42,7 +42,7 @@ public class chooseFoodsServlet extends HttpServlet {
             
         }
         String[] array = values.split(",");
-        if (array.length <= 2) {
+        if (array.length <= 3) {
             response.setContentType("text/html");
             response.setCharacterEncoding("UTF-8");
             request.setAttribute("chooseFoodsFailed", true);

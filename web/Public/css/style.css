@@ -323,9 +323,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 .choosefoods_name{
-    
+
     overflow: hidden;
-    
+
     display: inline-block;
     padding-left: 4.8px;
     max-width: 145px;
@@ -342,11 +342,15 @@ tr:nth-child(even){background-color: #f2f2f2}
     margin-top: 3px;
     text-align: center;
     bottom: 10px;
-    
+
 }
 .foodnotfoundlabel{
-    margin-bottom : 10px;
-    color: red;
+    margin-top: 0px;
+    text-align: center;
+    background-color: #ffffff;
+    width: 80%;
+   margin-left: 10%;
+
 }
 .search_button{
     float : right;
@@ -357,4 +361,51 @@ tr:nth-child(even){background-color: #f2f2f2}
     padding: 6px 18px;
     font-size: 13px;
     margin-top: 12px;
+}
+.menu_div{
+    margin-top: 5px;
+    background: darkgrey;  
+    width: 85%;
+    text-align: center;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    float: left;
+    display: inline-block;
+}
+
+.photos_div{
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 18px;
+    padding-right: 15px;
+}
+
+.menu_photo{
+    width: 170px;
+    height: 100px;
+}
+#menu_name{
+    margin-top: 5px;
+
+
+
+}
+.text_menu{
+
+    text-align: left;
+
+
+}
+#text_menu{
+    text-align: left;
+
+}
+#form{
+
+}
+#menuNotFoundDiv{
+    text-align: center;
+    background-color: white;
+    margin-top: 0%;
 }
