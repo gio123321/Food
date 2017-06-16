@@ -16,8 +16,14 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
+        String name1 = request.getParameter("name");
+        byte namebytes[] = name1.getBytes("ISO-8859-1"); 
+        String name = new String(namebytes, "UTF-8"); 
+        
+        String surname1 = request.getParameter("surname");
+        byte surnamebytes[] = surname1.getBytes("ISO-8859-1"); 
+        String surname = new String(surnamebytes, "UTF-8"); 
+        
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String gen = request.getParameter("gender");

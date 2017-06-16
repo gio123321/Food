@@ -8,7 +8,7 @@
         <link rel="icon" type="image/png" href="Public/foto/icon2.png" />
         <style>
             body{
-                background: url("Public/foto/bg2.jpg");
+                background: url("Public/foto/bg1.jpg");
             }
         </style>
     </head>
@@ -17,8 +17,7 @@
          <div class="interface_1">
                 <button type="submit" class="button_1" name="action" value="button1" formaction="Interface.jsp">მთავარი გვერდი</button>
                 <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">კერძის დამატება</button>
-                <button type="submit" class="button_1" name="action" value="button1" formaction="addmenu.jsp">მენიუს დამატება</button>
-                <button type="submit" class="button_1" name="action" value="button1" formaction="addfood.jsp">მენიუს შერჩევა</button>
+                <button type="submit" class="button_1" name="action" value="button1" formaction="chooseMenus.jsp">მენიუს შერჩევა</button>
             </div>
         </form>
         <form align="center"  action="addMenuServlet" name="addMenuForm" method="post">
@@ -29,46 +28,28 @@
                 <br>
                 <h2>მენიუს ტიპი</h2>
                 <select name="type" class="styled-select">
+                    
                     <option value="test">test</option>
                 </select>
+                <h2>სასმელი</h2>
+                <select name="beverage" class="styled-select">
+                    <option value="water">წყალი</option>
+                    <option value="wine">ღვინო</option>
+                    <option value="soda">გაზიანი სასმელი</option>
+                </select>
                 <div id='div'>
-                    <h2>კერძები</h2>
-                    რაოდენობა
-                    <select id="inQuantity" name="quantity"> 
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
                     <br>
                     <br>
-                    <script>
-
-                        function getSelectedValue() {
-                            var selector = document.getElementById("inQuantity");
-                            var value = selector[selector.selectedIndex].value;
-                            return value;
-                        }
-
-                        var counter = 1;
-
-                        addBoxes = function () {
-
-                            document.getElementById("btn").disabled = true;
-                            for (var i = 0; i < getSelectedValue(); i++) {
-
-                            }
-
-                        }
-
-                    </script>
 
                 </div>
-                <button>დამატება</button>
+                <button class="button_addfood">კერძების არჩევა</button>
+                <br>
                 <%
-                    if (request.getAttribute("addFoodFailed") != null && request.getAttribute("addFoodFailed") == Boolean.TRUE) {
+                    if (request.getAttribute("addMenuFailed") != null && request.getAttribute("addMenuFailed") == Boolean.TRUE) {
                         out.write("<p style=\"color:red;\">გთხოვთ შეავსოთ ყველა ველი!</p>");
+                    }
+                    else if(request.getAttribute("chooseFoodsFailed") != null && request.getAttribute("chooseFoodsFailed") == Boolean.TRUE) {
+                        out.write("<p style=\"color:red;\">გთხოვთ აირჩიოთ სამზე მეტი კერძი!</p>");
                     }
                 %>
             </div>

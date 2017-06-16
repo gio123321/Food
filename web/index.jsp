@@ -13,7 +13,7 @@
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
-                background-size: cover;
+                background-size: cover;      
             }
         </style>
 
@@ -23,7 +23,7 @@
         <div class="loginForm">
             <h2>შესვლა</h2>
             <form action="LoginServlet" method="post">
-                <input type="text" name="username" placeholder="შეიყვანეთ მომ .სახ."><br><br>
+                <input type="text" name="username" placeholder="შეიყვანეთ მომ.სახ."><br><br>
                 <input type="password" name="password" placeholder="შეიყვანეთ პაროლი"><br><br>
                 <button class="button">შესვლა</button>
                 

@@ -3,6 +3,7 @@ package Dao;
 import Enum.FoodType;
 import Model.Food;
 import Model.Ingredient;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -107,10 +108,14 @@ public class FoodDAOImpl implements FoodDAO {
         ArrayList<Food> foods = new ArrayList<>();
         try {
             pstmt = con.prepareStatement("SELECT * FROM food WHERE name = ?");
+            
+            byte namebytes[] = name.getBytes("ISO-8859-1");
+            name = new String(namebytes, "UTF-8");
+            
             pstmt.setString(1, name);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                
+
                 int id = Integer.parseInt(rs.getString("id"));
                 FoodType type = FoodType.valueOf(rs.getString("foodtype"));
                 String cooking_way = rs.getString("cooking_way");
@@ -124,7 +129,7 @@ public class FoodDAOImpl implements FoodDAO {
 
             }
 
-        } catch (SQLException ex) {
+        } catch (SQLException  | UnsupportedEncodingException ex) {
             System.out.println(ex.getMessage());
         }
         return foods;

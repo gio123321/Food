@@ -15,7 +15,6 @@ public class foodServelt extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        
         request.getAttribute("id");
-        PrintWriter pw = response.getWriter();
         
         
     }

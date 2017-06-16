@@ -4,7 +4,7 @@
         <description>Location to store uploaded file</description>
         <param-name>file-upload</param-name>
         <param-value>
-           C:\Users\user_2\Desktop\Food\web\Public\photos\
+            C:\Users\TechnoLine\Desktop\Food\web\Public\photos\
         </param-value>
     </context-param>
     <welcome-file-list>
@@ -14,9 +14,37 @@
         <servlet-name>searchServlet</servlet-name>
         <servlet-class>Servlet.searchServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>chooseFoodsServlet</servlet-name>
+        <servlet-class>Servlet.chooseFoodsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>chooseMenusServlet</servlet-name>
+        <servlet-class>Servlet.chooseMenusServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>searchMenusServlet</servlet-name>
+        <servlet-class>Servlet.searchMenusServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>searchServlet</servlet-name>
         <url-pattern>/searchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>interfaceServlet</servlet-name>
+        <url-pattern>/interfaceServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>chooseFoodsServlet</servlet-name>
+        <url-pattern>/chooseFoodsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>chooseMenusServlet</servlet-name>
+        <url-pattern>/chooseMenusServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>searchMenusServlet</servlet-name>
+        <url-pattern>/searchMenusServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -26,6 +54,10 @@
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>Servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>interfaceServlet</servlet-name>
+        <servlet-class>Servlet.interfaceServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -54,14 +86,6 @@
     <servlet-mapping>
         <servlet-name>addMenuServlet</servlet-name>
         <url-pattern>/addMenuServlet</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>interfaceServlet</servlet-name>
-        <servlet-class>Servlet.interfaceServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>interfaceServlet</servlet-name>
-        <url-pattern>/interfaceServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>foodServlet</servlet-name>

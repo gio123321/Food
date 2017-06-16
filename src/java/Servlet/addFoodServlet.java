@@ -53,7 +53,7 @@ public class addFoodServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         try {
 
             isMultipart = ServletFileUpload.isMultipartContent(request);
@@ -114,7 +114,7 @@ public class addFoodServlet extends HttpServlet {
 
                 }
             }
-
+            request.setCharacterEncoding("UTF-8");
             Hashtable table = new Hashtable();
 
             Iterator<FileItem> iter = fileItems.iterator();
@@ -127,8 +127,14 @@ public class addFoodServlet extends HttpServlet {
                 }
             }
 
-            String name = (String) table.get("name");
-            String cookingway = (String) table.get("cookingway");
+            String name1 = (String) table.get("name");
+            byte namebytes[] = name1.getBytes("ISO-8859-1");
+            String name = new String(namebytes, "UTF-8");
+
+            String cookingway1 = (String) table.get("cookingway");
+            byte cookingwaybytes[] = cookingway1.getBytes("ISO-8859-1");
+            String cookingway = new String(cookingwaybytes, "UTF-8");
+
             String typeStr = (String) table.get("type");
             FoodType type = FoodType.valueOf(typeStr);
             String inQuantity = (String) table.get("quantity");
@@ -139,11 +145,17 @@ public class addFoodServlet extends HttpServlet {
 
             for (int n = 1; n < quan + 1; n++) {
 
-                String iname = (String) table.get("name_" + n);
+                String iname1 = (String) table.get("name_" + n);
+                byte inamebytes[] = iname1.getBytes("ISO-8859-1");
+                String iname = new String(inamebytes, "UTF-8");
+
                 String iquantitystr = (String) table.get("quantity_" + n);
                 int iquantity = Integer.parseInt(iquantitystr);
                 String itypeStr = (String) table.get("type_" + n);
-                String icomment = (String) table.get("comment_" + n);
+                
+                String icomment1 = (String) table.get("comment_" + n);
+                byte commentbytes[] = icomment1.getBytes("ISO-8859-1");
+                String icomment = new String(commentbytes, "UTF-8");
 
                 if (iname.isEmpty() || iquantitystr.isEmpty() || icomment.isEmpty()) {
                     request.setAttribute("addFoodFailed", true);

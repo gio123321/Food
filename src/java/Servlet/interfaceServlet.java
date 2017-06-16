@@ -15,9 +15,7 @@ public class interfaceServlet extends HttpServlet {
         String id = request.getParameter("foodId");
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        PrintWriter p = response.getWriter();
-        
-        
+     
         RequestDispatcher rd = request.getRequestDispatcher("food.jsp");
         request.setAttribute("id",id);
         
